@@ -1,5 +1,6 @@
 import React from "react";
 import { BsArrowLeftShort, BsTable } from "react-icons/bs";
+import {TfiArrowCircleLeft} from "react-icons/tfi"
 import {
   MdSettingsInputAntenna,
   MdOutlineSettings,
@@ -20,8 +21,8 @@ function SideBar() {
           open ? "w-72" : "w-24"
         } duration-300 relative`}
       >
-        <BsArrowLeftShort
-          className={`text-4xl text-white bg-black rounded-full absolute -right-3 top-9 border border-black-100 cursor-pointer ${
+        <TfiArrowCircleLeft
+          className={`text-4xl text-white bg-gray-900 rounded-full absolute -right-3 top-9 border border-0 border-green-100 cursor-pointer ${
             !open && "rotate-180"
           }`}
           onClick={() => setOpen(!open)}
@@ -34,7 +35,7 @@ function SideBar() {
             <a href="/" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-800 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <AiOutlineHome className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
-                Dashboard
+                Home
               </h3>
             </a>
             <a href="/PageOne" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
