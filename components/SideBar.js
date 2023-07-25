@@ -53,10 +53,16 @@ function SideBar() {
             <a href="PageThree" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <MdSettingsInputAntenna className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
-                หน้าน้องปี 2
+                หน้าน้องปี 3.1
               </h3>
             </a>
             <a href="PageFour" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+              <MdSettingsInputAntenna className="text-3xl text-black group-hover:text-white" />
+              <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
+                หน้าน้องปี 3.2
+              </h3>
+            </a>
+            <a href="PageFive" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <BiSolidMapPin className="text-3xl text-black group-hover:text-white"/>
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 หน้าน้องปี 1
@@ -64,6 +70,8 @@ function SideBar() {
             </a>
           </div>
         </div>
+
+
         <hr className="border-b border-black"></hr>
         {/* setting */}
         <div className="my-8 border-b border-blue-900 w-full">
