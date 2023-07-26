@@ -8,7 +8,7 @@ export default function Home() {
     <title>My Project</title>
     </Head>
     <SideBar/> 
-    <div className="text-white">Home</div>
+    <div className="text-white">home</div>
     </div>
   );
 }
