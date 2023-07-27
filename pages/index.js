@@ -8,8 +8,8 @@ export default function Home() {
       <Login/>
     </div>
     // <div className="flex">
-    // <Head>
-    // <title>My Project</title>
+    //   <Head>
+    //     <title>My Project</title>
     // </Head>
     // <SideBar/> 
     // <div className="text-white">home</div>

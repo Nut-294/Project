@@ -93,9 +93,11 @@ function SideBar() {
         <div className=" w-full">
           <div className="flex mt-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
             <MdOutlineLogout className="text-3xl text-black group-hover:text-white" />
+            <a href="Login">
             <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
               Logout
             </h3>
+            </a>
           </div>
         </div>
       </div>
