@@ -11,9 +11,13 @@ import {BiSolidMapPin} from "react-icons/bi"
 import { AiOutlineHome } from "react-icons/ai";
 import { FaMapMarked } from "react-icons/fa";
 import { useState } from "react";
+import { useSession, signOut, signIn } from "next-auth/react";
 
 function SideBar() {
   const [open, setOpen] = useState(true);
+
+  const { data } = useSession()
+
   return (
     <div className="flex ">
       <div
@@ -32,7 +36,7 @@ function SideBar() {
             Project
           </h1>
           <div className="my-4 border-b border-blue-900 w-full">
-            <a href="/" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-800 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="/PageHome" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-800 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <AiOutlineHome className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 Home
@@ -91,14 +95,30 @@ function SideBar() {
         <hr className="border-b border-black"></hr>
         {/* logout */}
         <div className=" w-full">
-          <div className="flex mt-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+        {data?.user
+        ?(
+          <a onClick={()=>signOut({callbackUrl:'/'})}>
+            <div className="flex mt-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
             <MdOutlineLogout className="text-3xl text-black group-hover:text-white" />
-            <a href="Login">
             <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
               Logout
             </h3>
-            </a>
           </div>
+          </a>)
+        :(
+            <a href="/">
+            <div className="flex mt-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+              <MdOutlineLogout className="text-3xl text-black group-hover:text-white" />
+              <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
+                Login
+              </h3>
+            </div>
+          </a>)}
+        
+
+      
+          
+     
         </div>
       </div>
     </div>
