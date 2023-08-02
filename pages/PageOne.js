@@ -9,7 +9,7 @@ function PageOne() {
   return (
    <div className='flex'>
     <SideBar />
-      <div className='ml-36 mt-40'>
+      <div className='ml-96 mt-28 absolute'>
       <DynamicMap/>
       </div>
     </div>
