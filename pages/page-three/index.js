@@ -1,7 +1,8 @@
 "use client"
+//localhost:3000/page-three
 import React from 'react'
-import SideBar from '@/components/SideBar'
-function PageThree() {
+import SideBar from '../../components/compo-TE4/SideBar'
+export default function PageThree() {
   return (
     <div className="flex">
     <SideBar />
@@ -11,5 +12,3 @@ function PageThree() {
   </div>
   )
 }
-
-export default PageThree

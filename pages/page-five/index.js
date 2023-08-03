@@ -1,6 +1,8 @@
+"use client"
+//localhost:3000/page-five
 import React from 'react'
-import SideBar from '@/components/SideBar'
-function PageFive() {
+import SideBar from '../../components/compo-TE4/SideBar'
+export default function PageFive() {
   return (
     <div className="flex">
     <SideBar />
@@ -11,4 +13,4 @@ function PageFive() {
   )
 }
 
-export default PageFive
+

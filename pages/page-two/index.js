@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
-import SideBar from "@/components/SideBar";
-function PageTwo() {
+import SideBar from "../../components/compo-TE4/SideBar";
+export default function PageTwo() {
   return (
     <div className="flex">
       <SideBar />
@@ -12,4 +12,3 @@ function PageTwo() {
   );
 }
 
-export default PageTwo;
