@@ -13,9 +13,16 @@ import { AiOutlineHome } from "react-icons/ai";
 import { FaMapMarked } from "react-icons/fa";
 import { useState } from "react";
 
+import { useSession, signOut } from "next-auth/react";
+import { toast } from "react-toastify";
+
 
 function SideBar() {
   const [open, setOpen] = useState(true);
+
+  const { data } = useSession()
+  
+
 
   return (
     <div className="flex ">
@@ -35,37 +42,37 @@ function SideBar() {
             Project
           </h1>
           <div className="my-4 border-blue-900 w-full">
-            <a href="/pageone" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-800 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="/pagehome" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-800 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <AiOutlineHome className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 Home
               </h3>
             </a>
-            <a href="/pagetwo" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="/pageone" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <FaMapMarked className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 แผนที่
               </h3>
             </a>
-            <a href="/PageTwo" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="/pagetwo" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <BsTable className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 ตาราง
               </h3>
             </a>
-            <a href="PageThree" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="pagethree" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <MdSettingsInputAntenna className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 หน้าน้องปี 3.1
               </h3>
             </a>
-            <a href="PageFour" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="pagefour" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <MdSettingsInputAntenna className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 หน้าน้องปี 3.2
               </h3>
             </a>
-            <a href="PageFive" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="pagefive" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <BiSolidMapPin className="text-3xl text-black group-hover:text-white"/>
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 หน้าน้องปี 1
@@ -95,23 +102,28 @@ function SideBar() {
         {/* logout */}
         <div className=" w-full">
         
+          {data?.user
+          ?(
           <a onClick={()=>signOut({callbackUrl:'/'})}>
-            <div className="flex mt-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+          <div className="flex mt-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+          <MdOutlineLogout className="text-3xl text-black group-hover:text-white" />
+          <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
+            Logout
+          </h3>
+        </div>
+        </a>
+        )
+          :(
+          <a href="/">
+          <div className="flex mt-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
             <MdOutlineLogout className="text-3xl text-black group-hover:text-white" />
             <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
-              Logout
+              Login
             </h3>
           </div>
-          </a>
-      
-            <a href="/">
-            <div className="flex mt-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
-              <MdOutlineLogout className="text-3xl text-black group-hover:text-white" />
-              <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
-                Login
-              </h3>
-            </div>
-          </a>
+        </a>
+        )
+        }
         </div>
       </div>
     </div>

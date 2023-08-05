@@ -1,5 +1,10 @@
+"use client"
 import './globals.css'
 import { Poppins } from 'next/font/google'
+import { SessionProvider } from 'next-auth/react'
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const poppins = Poppins({ 
@@ -15,9 +20,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <div className="">
-          {children}
-        </div>
+        <SessionProvider>
+          <div className="">
+            <ToastContainer/>
+            {children}
+          </div>
+        </SessionProvider>
       </body>
     </html>
   )
