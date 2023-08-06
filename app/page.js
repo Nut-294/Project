@@ -24,8 +24,6 @@ export default function Login() {
         }
     },[data, router])
 
-
-
     const handleSubmit = async(e)=>{
         e.preventDefault()
         try{
@@ -103,6 +101,12 @@ export default function Login() {
                         <button type="submit" className="py-3 text-gray-100 bg-lime-500 w-full rounded hover:bg-lime-600 hover-scal-105 duration-300">
                             Login
                         </button>
+
+                        <p className="my-2 mt-6 text-right text-lime-500">
+                            <a href="/register"  >
+                             Register Now
+                            </a>
+                        </p>
                    
                 </form>
                 <div>
