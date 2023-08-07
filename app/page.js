@@ -16,10 +16,10 @@ export default function Login() {
         if(data && data.user){
             if(data.user.role === 'admin'){
                 toast.success("Login Success")
-                router.push("/pagehome")
+                router.push("/pHome")
             }else if(data.user.role === 'user'){
                 toast.success("Login Success")
-                router.push("/pagehome")
+                router.push("/pHome")
             }
         }
     },[data, router])
