@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
-import { BsArrowLeftShort, BsTable } from "react-icons/bs";
-import {TfiArrowCircleLeft} from "react-icons/tfi"
+import { BsTable } from "react-icons/bs";
+import { TfiArrowCircleLeft } from "react-icons/tfi"
 import {
   MdSettingsInputAntenna,
   MdOutlineSettings,
@@ -14,9 +14,6 @@ import { FaMapMarked } from "react-icons/fa";
 import { useState } from "react";
 
 import { useSession, signOut } from "next-auth/react";
-import { toast } from "react-toastify";
-
-
 function SideBar() {
   const [open, setOpen] = useState(true);
 
@@ -42,37 +39,37 @@ function SideBar() {
             Project
           </h1>
           <div className="my-4 border-blue-900 w-full">
-            <a href="/pagehome" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-800 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="/pHome" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-800 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <AiOutlineHome className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 Home
               </h3>
             </a>
-            <a href="/pageone" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="/pTE4-1" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <FaMapMarked className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 แผนที่
               </h3>
             </a>
-            <a href="/pagetwo" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="/pTE4-2" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <BsTable className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 ตาราง
               </h3>
             </a>
-            <a href="pagethree" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="pTE3-1" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <MdSettingsInputAntenna className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 หน้าน้องปี 3.1
               </h3>
             </a>
-            <a href="pagefour" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="pTE3-2" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <MdSettingsInputAntenna className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 หน้าน้องปี 3.2
               </h3>
             </a>
-            <a href="pagefive" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="pTE1" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <BiSolidMapPin className="text-3xl text-black group-hover:text-white"/>
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 หน้าน้องปี 1
