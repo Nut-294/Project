@@ -16,6 +16,12 @@ module.exports = {
         'spin-slow': 'spin 6s linear infinite',
         'spin-delay': 'spin 6s linear infinite -3s',
       },
+      margin:{
+        'mse' : '36rem'
+      },
+      margin: {
+        '545px': '545px',
+      }
     },
   },
   plugins: [],
