@@ -1,7 +1,7 @@
 "use client";
 //localhost:3000/pHome
 import React from "react";
-import SideBar from "@/app/components/compoTE4/Sidebar";
+import SideBar from "@/components/compoTE4/Sidebar";
 
 export default function page() {
   return (

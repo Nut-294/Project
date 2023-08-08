@@ -1,5 +1,5 @@
 // url : http://localhost:3000/api/auth
-import prisma from "@/app/libs/prismadb"
+import prisma from "@/libs/prismadb"
 import { NextResponse } from "next/server"
 import bcrypt from 'bcryptjs'
 
