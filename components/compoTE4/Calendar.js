@@ -58,7 +58,7 @@ export default function Calendar(){
                 <div className="col-sm-5">
                   <input
                     type="date"
-                    className="text-gray-500 rounded-md h-12 w-36 p-2 border-green-200 border-4 outline-0"
+                    className="text-gray-500 rounded-md h-12 w-36 p-2 border-4 outline-0"
                     name="todate"
                     onChange={(e) => handletodate(e)}
                   />

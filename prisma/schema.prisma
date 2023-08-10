@@ -11,18 +11,61 @@ datasource db {
 }
 
 model Post {
-  id Int   @id @default(autoincrement())
-  title String?
+  id          Int   @id @default(autoincrement())
+  title       String?
   description String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model User {
-  id       Int  @id @default(autoincrement())
+  id        Int  @id @default(autoincrement())
   firstname String
   lastname  String
   email     String      @unique
   password  String
   role      String @default("user")
+}
+
+model Gridhistorical {
+  id             Int      @id @default(autoincrement())
+  Time           DateTime @db.Date
+  eNodeB_Name    String   @db.VarChar(50)
+  Sector         String   @db.VarChar(50)
+  Cell_Name      String   @db.VarChar(50)
+  Latitude       Float
+  Longitude      Float
+  Dominant_RSRP  Float
+  Dominant_RSRQ  Float
+}
+
+model Sitehistorical {
+  id               Int      @id @default(autoincrement())
+  Time             DateTime @db.Date
+  eNodeB_Name      String   @db.VarChar(50)
+  LATITUDE_WGS84   Float
+  LONGITUDE_WGS84  Float
+  province         String   @db.VarChar(50)
+  district         String   @db.VarChar(50)
+}
+
+model Cellnamehistorical {
+  id                      Int       @id @default(autoincrement())
+  Time                    DateTime  @db.Date
+  eNodeB_Name             String    @db.VarChar(50)
+  Sector                  String    @db.VarChar(50)
+  Cell_Name               String    @db.VarChar(50)
+  Frequency               Float
+  LATITUDE_WGS84          Float
+  LONGITUDE_WGS84         Float
+  ant_height              Float
+  REFERENCESIGNALPWR      Float
+  m_tilt                  Float
+  e_tilt                  Float
+  physical_azimuth        Float
+  horizontal_beam_width   Float
+  ant_gain                Float
+  ant_logical_beam        Float 
+  ant_model               String    @db.VarChar(50)
+  delta_azimuth           Float
 }
