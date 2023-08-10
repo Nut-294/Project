@@ -62,7 +62,6 @@ export default function Calendar(){
                     name="todate"
                     onChange={(e) => handletodate(e)}
                   />
-                  
                 </div>
               </div>
             </form>
