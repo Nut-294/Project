@@ -17,10 +17,15 @@ module.exports = {
         'spin-delay': 'spin 6s linear infinite -3s',
       },
       margin:{
-        'mse' : '36rem'
-      },
-      margin: {
+        'mse' : '36rem',
         '545px': '545px',
+      },
+      height: {
+        '500px': '31.25rem',
+        '800px': '50rem',
+      },
+      padding:{
+        '352px': '22rem'
       }
     },
   },
