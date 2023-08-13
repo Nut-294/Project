@@ -52,13 +52,13 @@ export default function Calendar(){
           <div className="mt-3">
             <form onSubmit={handleSubmit}>
               <div className="row mb-4 ">
-                <label className="col-sm-2 col-form-label">
+                <label className="text-white">
                   Select Date
                 </label>
-                <div className="col-sm-5">
+                <div>
                   <input
                     type="date"
-                    className="text-gray-500 rounded-md h-12 w-36 p-2 border-4 outline-0"
+                    className="text-gray-500 rounded-md h-12 w-36 p-2 border-4 border-green-700 outline-0 mt-1"
                     name="todate"
                     onChange={(e) => handletodate(e)}
                   />

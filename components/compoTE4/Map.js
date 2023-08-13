@@ -8,7 +8,6 @@ import { FloatButton } from 'antd';
 import { ZoomInOutlined } from '@ant-design/icons'
 
 
-
 export default function Map() {
   const iconUrl = 'Pole.png'
 
@@ -46,7 +45,7 @@ export default function Map() {
       <MapContainer
         ref={mapRef}
         style={{ height: "500px", width: "800px", zIndex: '1' }}
-        center={[13.727460486516733, 100.77674098706302]}
+        center={[13.773481,100.561079]}
         zoom={30}
         scrollWheelZoom={true}>
         <TileLayer
