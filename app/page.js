@@ -15,11 +15,11 @@ export default function Login() {
     useEffect(() => {
         if(data && data.user){
             if(data.user.role === 'admin'){
-                toast.success("Login Success")
                 router.push("/pHome")
+                toast.success("Login Success")
             }else if(data.user.role === 'user'){
-                toast.success("Login Success")
                 router.push("/pHome")
+                toast.success("Login Success")
             }
         }
     },[data, router])

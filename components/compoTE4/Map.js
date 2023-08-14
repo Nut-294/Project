@@ -86,28 +86,28 @@ export default function Map() {
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="th px-6 py-3" >
                 ID
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="th px-6 py-0" >
                 Time
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="th px-6 py-0" >
                 eNodeB_Name
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="th px-6 py-3" >
                 LATITUDE_WGS84
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="th px-6 py-3" >
                 LONGITUDE_WGS84
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="th px-6 py-3" >
                 province
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="th px-6 py-3" >
                 district
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="th px-6 py-3" >
                 Go to
               </th>
             </tr>
@@ -137,7 +137,7 @@ export default function Map() {
                   {item.district}
                 </td>
                 <td className="px-6 py-4">
-                  <ZoomInOutlined onClick={() => flyto(item.LATITUDE_WGS84, item.LONGITUDE_WGS84)} style={{ cursor: 'pointer' }} />
+                  {"   "}<ZoomInOutlined onClick={() => flyto(item.LATITUDE_WGS84, item.LONGITUDE_WGS84)} style={{ cursor: 'pointer' }} />
                 </td>
               </tr>
             )}
