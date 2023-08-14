@@ -1,25 +1,38 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import { BiSearchAlt } from "react-icons/bi";
-export default function Search() {
+
+export default function Search({flyto}) {
+  const [data, setData] = useState([]);
+  const [filterData, setFilterData] = useState([]);
+  
+  const [input,setInput] = useState()
+
+
   useEffect(() => {
     fetch("http://localhost:3000/api/sitehistorical")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setFilterData(data);
       })
       .catch((err) => console.log(err));
   }, []);
-  const [data, setData] = useState([]);
-  const [filterData, setFilterData] = useState([]);
+
   const handleFilter = (value) => {
+    console.log("value",value)
+    //res คือ ค่าการค้นหา
     const res = filterData.filter((f) => f.eNodeB_Name.includes(value));
     setData(res);
     if (value === "") {
       setData([]);
     }
   };
+
+  const handleSearch = () =>{
+  setInput([]);
+  setData([]);
+  }
+
   return (
     <div>
       <label className="text-white">
@@ -27,10 +40,11 @@ export default function Search() {
       </label>
       <div className="flex bg-white h-12 w-48 mt-2 border-4 border-green-700 rounded-md outline-0">
         <input
-          type="text"
+          type="search"
           placeholder="Search eNodeB"
           className="w-32 outline-0 ml-2"
           onChange={(e) => handleFilter(e.target.value)}
+          value={input}
         />
         <i className="mt-2 ml-4 text-2xl"><BiSearchAlt /></i>
         
@@ -40,6 +54,15 @@ export default function Search() {
           <div
             key={d.id}
             className="bg-white w-36 p-2 border-yellow-200 border-4"
+            onClick={() =>{ flyto(d.LATITUDE_WGS84, d.LONGITUDE_WGS84); handleSearch(d.eNodeB_Name); }}
+
+
+            
+            // onClick={() =>{ flyto(d.LATITUDE_WGS84, d.LONGITUDE_WGS84);}}
+            // onChange={(e)=>handleSearch(eNodeB_Name)}
+
+            // onClick={() =>{ flyto(d.LATITUDE_WGS84, d.LONGITUDE_WGS84); handleSearch(d.eNodeB_Name); }}
+            // onClick={() =>{ flyto(d.LATITUDE_WGS84, d.LONGITUDE_WGS84); handleSearch(d.eNodeB_Name); setData([]); }}
           >
             {d.eNodeB_Name}
           </div>

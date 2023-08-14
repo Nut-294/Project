@@ -25,7 +25,7 @@ function SideBar() {
     <div className="flex ">
       <div
         className={`bg-lime-400 h-screen p-5 pt-8 ${
-          open ? "w-72" : "w-24"
+          open ? "w-64" : "w-24"
         } duration-300 relative`}
       >
         <TfiArrowCircleLeft

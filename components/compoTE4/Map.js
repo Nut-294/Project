@@ -6,7 +6,8 @@ import { list } from "./functions/sitehistorical";
 
 import { FloatButton } from 'antd';
 import { ZoomInOutlined } from '@ant-design/icons'
-
+import Search from "./Search";
+import Calendar from "./Calendar";
 
 export default function Map() {
   const iconUrl = 'Pole.png'
@@ -41,7 +42,12 @@ export default function Map() {
   }
 
   return (
-    <div>
+    <div className="flex">
+      <div className="mr-12">
+      <Calendar/>
+      <Search flyto={flyto}/>
+      </div>
+      <div className="mt-12">
       <MapContainer
         ref={mapRef}
         style={{ height: "500px", width: "800px", zIndex: '1' }}
@@ -70,6 +76,7 @@ export default function Map() {
             : null
         }
       </MapContainer>
+      </div>
       <div>
         <FloatButton onClick={toggleTable} className="float-button" />
       </div>

@@ -37,27 +37,10 @@ export default function PageOne() {
       <div className="fixed">
         <SideBar/>
       </div>
-      <div className="ml-80 mt-16 ">
-        <Calendar/>
-        <Search/>
-      </div>
-      <div className="relative mt-24 ml-24">
+      <div className="relative mt-24 ml-72 ">
         <DynamicMap/>
       </div>
     </div>
   );
 }
 
-//อันเก่า
-{/* <div className="relative">
-      <SideBar />
-      <div className="text-white ml-96 relative">
-        <Calendar />
-      </div>
-      <div className="mt-6 m-[545px] relative">
-        <Search />
-      </div>
-      <div className="ml-96 mt-28 relative">
-        <DynamicMap />
-      </div>
-      <div /> */}
