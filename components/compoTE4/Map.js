@@ -84,30 +84,30 @@ export default function Map() {
       <div
         className={`content-table ${showTable ? "visible" : ""} ${slideAnimation ? "slide-up" : ""}`}>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <thead className="th text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
             <tr>
-              <th scope="col" className="th px-6 py-3" >
+              <th scope="col" className="px-6 py-3" >
                 ID
               </th>
-              <th scope="col" className="th px-6 py-0" >
+              <th scope="col" className="px-6 py-3" >
                 Time
               </th>
-              <th scope="col" className="th px-6 py-0" >
+              <th scope="col" className="px-6 py-3" >
                 eNodeB_Name
               </th>
-              <th scope="col" className="th px-6 py-3" >
+              <th scope="col" className="px-6 py-3" >
                 LATITUDE_WGS84
               </th>
-              <th scope="col" className="th px-6 py-3" >
+              <th scope="col" className="px-6 py-3" >
                 LONGITUDE_WGS84
               </th>
-              <th scope="col" className="th px-6 py-3" >
+              <th scope="col" className="px-6 py-3" >
                 province
               </th>
-              <th scope="col" className="th px-6 py-3" >
+              <th scope="col" className="px-6 py-3" >
                 district
               </th>
-              <th scope="col" className="th px-6 py-3" >
+              <th scope="col" className="px-6 py-3" >
                 Go to
               </th>
             </tr>

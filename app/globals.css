@@ -14,11 +14,11 @@
   right: 0;
   height: 300px;
   background-color: white;
-  padding: 20px;
   transition: transform 0.3s ease-in-out;
   transform: translateY(100%);
   z-index: 999;
   overflow: scroll;
+  
 }
 
 .content-table.visible {
@@ -37,7 +37,7 @@
 }
 
 .th {
-  background: white;
+  background: rgb(207, 205, 205);
   position: sticky;
   top: 0; /* Don't forget this, required for the stickiness */
 }
