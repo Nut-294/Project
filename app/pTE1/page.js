@@ -4,6 +4,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
 import SideBar from "@/components/compoTE4/Sidebar";
+import { useEffect } from "react";
 
 const MapContent = dynamic(() => import("@/components/compoTE1/MapContent"), {
   ssr: false,
@@ -11,6 +12,12 @@ const MapContent = dynamic(() => import("@/components/compoTE1/MapContent"), {
 
 
 export default function Home() {
+  useEffect(() => {
+    fetch("http://localhost:3000/api/sitehistorical")
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+      
+  }, []);
   return (
     <div className="flex">
       <div className="fixed">
