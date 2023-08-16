@@ -3,8 +3,6 @@
 import React from "react";
 import SideBar from "@/components/compoTE4/Sidebar";
 import dynamic from "next/dynamic";
-import Calendar from "@/components/compoTE4/Calendar";
-import Search from "@/components/compoTE4/Search";
 const DynamicMap = dynamic(() => import("@/components/compoTE4/Map"), {
   loading: () => (
     <div role="status">

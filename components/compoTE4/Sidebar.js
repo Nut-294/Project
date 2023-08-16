@@ -57,19 +57,19 @@ function SideBar() {
                 ตาราง
               </h3>
             </a>
-            <a href="pTE3-1" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="/pTE3-1" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <MdSettingsInputAntenna className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 หน้าน้องปี 3.1
               </h3>
             </a>
-            <a href="pTE3-2" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="/pTE3-2" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <MdSettingsInputAntenna className="text-3xl text-black group-hover:text-white" />
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 หน้าน้องปี 3.2
               </h3>
             </a>
-            <a href="pTE1" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="/pTE1" className="flex mb-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <BiSolidMapPin className="text-3xl text-black group-hover:text-white"/>
               <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
                 หน้าน้องปี 1
