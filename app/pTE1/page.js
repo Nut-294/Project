@@ -9,6 +9,7 @@ const MapContent = dynamic(() => import("@/components/compoTE1/MapContent"), {
   ssr: false,
 });
 
+
 export default function Home() {
   return (
     <div className="flex">
