@@ -6,7 +6,7 @@ export default function Search({ flyto }) {
   const [data, setData] = useState([]);
   const [filterData, setFilterData] = useState([]);
 
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3000/api/sitehistorical")
@@ -28,6 +28,7 @@ export default function Search({ flyto }) {
   };
 
   const handleSearch = (value) => {
+    console.log(value)
     if (value) {
       setData([]);
     }
@@ -42,7 +43,7 @@ export default function Search({ flyto }) {
           type="search"
           placeholder="Search eNodeB"
           className="w-32 outline-0 ml-2"
-          onChange={(e) => handleFilter(e.target.value)}
+          onChange={(e) => {handleFilter(e.target.value.toLocaleUpperCase()); setInput(e.target.value.toLocaleUpperCase());}}
           value={input}
         />
         <i className="mt-2 ml-4 text-2xl">
@@ -57,13 +58,9 @@ export default function Search({ flyto }) {
             onClick={() => {
               flyto(d.LATITUDE_WGS84, d.LONGITUDE_WGS84);
               handleSearch(d.eNodeB_Name);
+              setInput(d.eNodeB_Name)
+            
             }}
-
-            // onClick={() =>{ flyto(d.LATITUDE_WGS84, d.LONGITUDE_WGS84);}}
-            // onChange={(e)=>handleSearch(eNodeB_Name)}
-
-            // onClick={() =>{ flyto(d.LATITUDE_WGS84, d.LONGITUDE_WGS84); handleSearch(d.eNodeB_Name); }}
-            // onClick={() =>{ flyto(d.LATITUDE_WGS84, d.LONGITUDE_WGS84); handleSearch(d.eNodeB_Name); setData([]); }}
           >
             {d.eNodeB_Name}
           </div>
