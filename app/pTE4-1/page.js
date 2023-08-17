@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 const DynamicMap = dynamic(() => import("@/components/compoTE4/Map"), {
   loading: () => (
     <div role="status">
-      <div className="border-4 border-yellow h-[500px] w-[800px] bg-green-800 py-52 px-[352px]">
+      <div className="border-4 border-yellow h-[500px] w-[800px] bg-green-800 py-52 px-[352px] ml-60 mt-12">
         <svg
           aria-hidden="true"
           className=" w-20 h-20 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"

@@ -19,13 +19,14 @@ module.exports = {
       margin:{
         'mse' : '36rem',
         '545px': '545px',
+        '800px':'50rem'
       },
       height: {
         '500px': '31.25rem',
         '800px': '50rem',
       },
       padding:{
-        '352px': '22rem'
+        '352px': '22rem',
       }
     },
   },

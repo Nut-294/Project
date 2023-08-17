@@ -38,7 +38,7 @@ export default function Search({ flyto }) {
   return (
     <div>
       <label className="text-white">Select eNodeB</label>
-      <div className="flex bg-white h-12 w-48 mt-2 border-4 border-green-700 rounded-md outline-0">
+      <div className="flex bg-white h-12 w-48 mt-2 rounded-md outline-0">
         <input
           type="search"
           placeholder="Search eNodeB"
@@ -54,7 +54,7 @@ export default function Search({ flyto }) {
         {data.map((d) => (
           <div
             key={d.id}
-            className="bg-white w-36 p-2 border-yellow-200 border-4"
+            className="bg-white w-36 p-2 cursor-pointer  "
             onClick={() => {
               flyto(d.LATITUDE_WGS84, d.LONGITUDE_WGS84);
               handleSearch(d.eNodeB_Name);
