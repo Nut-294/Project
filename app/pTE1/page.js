@@ -4,7 +4,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
 import SideBar from "@/components/compoTE4/Sidebar";
-import { useEffect } from "react";
+import Search from "@/components/compoTE1/search_enodeB";
 
 const MapContent = dynamic(() => import("@/components/compoTE1/MapContent"), {
   ssr: false,
@@ -12,12 +12,6 @@ const MapContent = dynamic(() => import("@/components/compoTE1/MapContent"), {
 
 
 export default function Home() {
-  useEffect(() => {
-    fetch("http://localhost:3000/api/sitehistorical")
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-      
-  }, []);
   return (
     <div className="flex">
       <div className="fixed">
@@ -29,7 +23,10 @@ export default function Home() {
             type="date"
             className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           ></input>
-          <div className="relative">
+         
+          <Search/>
+
+          {/* <div className="relative">
             <input
               type="text"
               placeholder="Search..."
@@ -40,8 +37,8 @@ export default function Home() {
               className="absolute top-2 right-2 focus:outline-none"
             >
               <i className="fas fa-search text-gray-600"></i>
-            </button>
-          </div>
+            </button> 
+            </div>*/}
           <select className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
