@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect, useRef } from "react";
-import { MapContainer, Marker, TileLayer, Popup } from "react-leaflet";
+import { MapContainer, Marker, TileLayer, Popup, Rectangle, Circle } from "react-leaflet";
 import "leaflet/dist/leaflet.css"
 import { list } from "./functions/sitehistorical";
 
@@ -8,11 +8,16 @@ import { FloatButton } from 'antd';
 import { ZoomInOutlined } from '@ant-design/icons'
 import Search from "./Search";
 import Calendar from "./Calendar";
+import Grid from "./Grid";
+import { listgrid } from "./functions/gridhistorical"
+import L from "leaflet"
 
 export default function Map() {
   const iconUrl = 'Pole.png'
 
   const [data, setData] = useState([])
+
+  const [grid, setGrid] = useState(null)
 
   const [showTable, setShowTable] = useState(false);
   const [slideAnimation, setSlideAnimation] = useState(false);
@@ -41,41 +46,55 @@ export default function Map() {
     mapRef.current.flyTo([LATITUDE_WGS84, LONGITUDE_WGS84], 18)
   }
 
+  const radius = 50;
+  console.log("Hello", grid)
   return (
     <div className="flex">
       <div className="mr-12">
-      <Calendar/>
-      <Search flyto={flyto}/>
+        <Calendar />
+        <Search flyto={flyto} />
       </div>
       <div className="mt-12">
-      <MapContainer
-        ref={mapRef}
-        style={{ height: "500px", width: "800px", zIndex: '1' }}
-        center={[13.773481,100.561079]}
-        zoom={30}
-        scrollWheelZoom={true}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {
-          data
-            ? data.map((item) =>
-              <Marker
-                eventHandlers={{ click: () => flyto(item.LATITUDE_WGS84, item.LONGITUDE_WGS84) }}
-                key={item.id}
-                icon={L.icon({ iconUrl, iconSize: [60, 50] })}
-                position={[item.LATITUDE_WGS84, item.LONGITUDE_WGS84]}>
-                <Popup>
-                  {item.eNodeB_Name} <br />
-                  {item.province} <br />
-                  {item.district}
-                </Popup>
-              </Marker>
+        <Grid setGrid={setGrid} />
+        <MapContainer
+          ref={mapRef}
+          style={{ height: "500px", width: "800px", zIndex: '1' }}
+          center={[13.773481, 100.561079]}
+          zoom={30}
+          scrollWheelZoom={true}>
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+
+          {
+            data
+              ? data.map((item) =>
+                <Marker
+                  eventHandlers={{ click: () => flyto(item.LATITUDE_WGS84, item.LONGITUDE_WGS84) }}
+                  key={item.id}
+                  icon={L.icon({ iconUrl, iconSize: [60, 50] })}
+                  position={[item.LATITUDE_WGS84, item.LONGITUDE_WGS84]}>
+                  <Popup>
+                    {item.eNodeB_Name} <br />
+                    {item.province} <br />
+                    {item.district}
+                  </Popup>
+                </Marker>
+              )
+              : null
+          }
+          {
+            grid && grid.map((item, index) =>
+              <Rectangle
+                key={index}
+                bounds={L.latLng([item.Latitude, item.Longitude]).toBounds(radius)}
+                pathOptions={{ fillColor: "red", fillOpacity: "0.5", weight: "1", }}
+              >
+              </Rectangle>
             )
-            : null
-        }
-      </MapContainer>
+          }
+        </MapContainer>
       </div>
       <div>
         <FloatButton onClick={toggleTable} className="float-button" />
