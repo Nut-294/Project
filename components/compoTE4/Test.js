@@ -1,43 +1,88 @@
-"use client"
-import { useState } from 'react';
-import { BiSearchAlt } from 'react-icons/bi';
-const Test = ({flyto}) => {
+"use client";
+import { cleanDistDir } from "@/next.config";
+import { useState } from "react";
+import { BiSearchAlt } from "react-icons/bi";
+import SideBar from "./Sidebar";
+const Test = ({ flyto }) => {
   //ปฎิทิน
   const [date, setDate] = useState("");
-  const handleSelectdate = async(e) => {
-    const getdate = e.target.value+"T00:00:00.000Z"
-    console.log("getdate",getdate)
-    const response = await fetch(`http://localhost:3000/api/testsite?targetDate=${getdate}`)
-    const filteredData = await response.json()
-    console.log("filteredData ค่าข้อมูล 15000",filteredData)
+  const [site, setSite] = useState({})
+
+  const handleSelectdate = async (e) => {
+    const getdate = e.target.value;
+    setDate(getdate);
+    // const response = await fetch(`http://localhost:3000/api/testsite?targetDate=${getdate}`)
+    // const filteredData = await response.json()
+    // console.log("filteredData ค่าข้อมูล 15000",filteredData)
   };
 
+  //ค่าวันที่
+  const data = date + "T00:00:00.000Z";
+ 
+  //เสริซ
+  const [inputValue, setInputValue] = useState("");
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
+  //submit
+  const handleSubmit = async(event) => {
+    event.preventDefault();
 
+    const response = await fetch(`http://localhost:3000/api/testsite?targetDate=${data}&enodeb=${inputValue}`)
+    const filteredData = await response.json()
+    setSite(filteredData)
+  };
+console.log("site",site)
   return (
-    <div>
+    <div className="flex">
+      <div className="fixed">
+        <SideBar/>
+      </div>
       {/* Calendar */}
-    <div className="mt-3">
-      <form>
-        <div className="row mb-4 ">
-          <label className="text-white">
-            Select Date
-          </label>
-          <div>
-            <input
-              type="date"
-              className="text-gray-500 rounded-md h-12 w-36 p-2 outline-0 mt-1"
-              name="todate"
-              onChange={(e) =>{ handleSelectdate(e); setDate(e.target.value);}}
-            />
+      <div className="mt-20 ml-72">
+        <form onSubmit={handleSubmit}>
+          <div className="row mb-4 ">
+            <label className="text-white">Select Date</label>
+            <div>
+              <input
+                type="date"
+                className="text-gray-500 rounded-md h-12 w-36 p-2 outline-0 mt-1"
+                name="todate"
+                onChange={(e) => {
+                  handleSelectdate(e);
+                  setDate(e.target.value);
+                }}
+              />
+            </div>
           </div>
-        </div>
-      </form>
+          <label className="text-white mt-8">Select Date</label>
+          <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
+            <input
+              type="text"
+              value={inputValue}
+              onChange={handleInputChange}
+              placeholder="Enter eNodeB"
+              className="w-36 outline-0 ml-3"
+            />
+            <i className="mt-3 text-2xl">
+              <BiSearchAlt />
+            </i>
+          </div>
+
+          {/* //Submit */}
+          <button
+            type="submit"
+            className="mt-4 bg-green-500 h-10 w-20 rounded-md border-2 border-white"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
-  </div>
-  )
-}
-export default Test
+  );
+};
+export default Test;
 // -------------------------------------------------------------------------
 
 // const [disable, setDisable] = useState(true);
@@ -75,13 +120,13 @@ export default Test
 // const handleSubmit = (e) => {
 //   e.preventDefault();
 
-  //alert("todate "+todate+ "form date"+ fromdate);
+//alert("todate "+todate+ "form date"+ fromdate);
 
-  // if (todateformat > fromdateformat) {
-  //   alert("Please select valid date");
-  // } else {
-  //   alert("Successfull ! Please set API URL");
-  // }
+// if (todateformat > fromdateformat) {
+//   alert("Please select valid date");
+// } else {
+//   alert("Successfull ! Please set API URL");
+// }
 // };
 
 // return (
