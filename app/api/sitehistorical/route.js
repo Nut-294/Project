@@ -6,7 +6,7 @@ export const GET = async () => {
     try{
         
         const sitehistoricals = await prisma.sitehistorical.findMany({
-            take:50
+            take:100
         })
 
         return NextResponse.json(sitehistoricals)
