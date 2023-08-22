@@ -1,4 +1,4 @@
-//url: http://localhost:3000/api/position
+//url: http://localhost:3000/api/sitehistorical
 import prisma from "@/libs/prismadb"
 import { NextResponse } from "next/server"
 

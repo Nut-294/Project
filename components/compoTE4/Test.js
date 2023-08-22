@@ -2,8 +2,9 @@
 import { cleanDistDir } from "@/next.config";
 import { useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
-import SideBar from "./Sidebar";
-const Test = ({ flyto }) => {
+
+
+const Test = ({setData, flyto}) => {
   //ปฎิทิน
   const [date, setDate] = useState("");
   const [site, setSite] = useState({})
@@ -11,9 +12,7 @@ const Test = ({ flyto }) => {
   const handleSelectdate = async (e) => {
     const getdate = e.target.value;
     setDate(getdate);
-    // const response = await fetch(`http://localhost:3000/api/testsite?targetDate=${getdate}`)
-    // const filteredData = await response.json()
-    // console.log("filteredData ค่าข้อมูล 15000",filteredData)
+
   };
 
   //ค่าวันที่
@@ -22,25 +21,23 @@ const Test = ({ flyto }) => {
   //เสริซ
   const [inputValue, setInputValue] = useState("");
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    setInputValue(event.target.value.toLocaleUpperCase());
   };
 
   //submit
   const handleSubmit = async(event) => {
     event.preventDefault();
-
     const response = await fetch(`http://localhost:3000/api/testsite?targetDate=${data}&enodeb=${inputValue}`)
     const filteredData = await response.json()
-    setSite(filteredData)
+    setData(filteredData)
+    flyto(filteredData[0].LATITUDE_WGS84,filteredData[0].LONGITUDE_WGS84)
   };
-console.log("site",site)
+ 
+  
   return (
     <div className="flex">
-      <div className="fixed">
-        <SideBar/>
-      </div>
       {/* Calendar */}
-      <div className="mt-20 ml-72">
+      <div className="">
         <form onSubmit={handleSubmit}>
           <div className="row mb-4 ">
             <label className="text-white">Select Date</label>
