@@ -7,7 +7,6 @@ import { BiSearchAlt } from "react-icons/bi";
 const Test = ({setData, flyto}) => {
   //ปฎิทิน
   const [date, setDate] = useState("");
-  const [site, setSite] = useState({})
 
   const handleSelectdate = async (e) => {
     const getdate = e.target.value;
@@ -84,10 +83,10 @@ export default Test;
 
 // const [disable, setDisable] = useState(true);
 // const [todate, setTodate] = useState([]);
-// // const [fromdate, setFromdate] = useState([]);
+// const [fromdate, setFromdate] = useState([]);
 
 // const [todateformat, setTodateformat] = useState("");
-// // const [fromdateformat, setFromdateformat] = useState("");
+// const [fromdateformat, setFromdateformat] = useState("");
 
 // const handletodate = (e) => {
 //   const gettodatevalue = e.target.value;
@@ -99,7 +98,7 @@ export default Test;
 //   setTodate(gettodatevalue);
 //   setTodateformat(settodateformat);
 //   setDisable(false);
-//   //console.log(settodateformat);
+  //console.log(settodateformat);
 // };
 
 // const handlefromdate = (e) => {
@@ -112,7 +111,7 @@ export default Test;
 //     setfromyear + "" + setfrommonth + "" + setfromdate;
 //   setFromdate(getfromdatevalue);
 //   setFromdateformat(setfromformatdate);
-//   // console.log(setfromformatdate);
+  // console.log(setfromformatdate);
 // };
 // const handleSubmit = (e) => {
 //   e.preventDefault();
