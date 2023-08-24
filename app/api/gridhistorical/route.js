@@ -2,19 +2,24 @@
 import prisma from "@/libs/prismadb"
 import { NextResponse } from "next/server"
 
-export const GET = async () => {
-    try {
+export const GET = async (request,response) => {
+    const url = new URL(request.url)
+    const targetDate = url.searchParams.get("targetDate")
+    const enodeb = url.searchParams.get("enodeb");
+    
+    try{
 
         const gridhistorical = await prisma.gridhistorical.findMany({
-            take: 10,
+            where:{
+                Time: targetDate,
+                eNodeB_Name:enodeb
+            }
         })
-
-    
-
+        
         return NextResponse.json(gridhistorical)
 
     } catch (err) {
-        return NextResponse.json({ message: "GET Error", err }, { status: 500 })
+        return NextResponse.json({ message: "GET gridhistorical Error", err }, { status: 500 })
     }
 }
 

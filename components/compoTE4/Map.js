@@ -7,14 +7,18 @@ import { list } from "./functions/sitehistorical";
 import { FloatButton } from 'antd';
 import { ZoomInOutlined } from '@ant-design/icons'
 import Search from "./Search";
-import Test from "./Test";
+import Test from "./Form";
 import { listgrid } from "./functions/gridhistorical"
 import L from "leaflet"
+import Grid from "./Grid";
 
 export default function Map() {
   const iconUrl = 'Pole.png'
 
+  //ข้อมูล site 1 ต้น
   const [data, setData] = useState([])
+  //ข้อมูล grid ของ site 1 ต้น
+  const [grid, setGrid] = useState([])
 
   const [showTable, setShowTable] = useState(false);
   const [slideAnimation, setSlideAnimation] = useState(false);
@@ -27,15 +31,14 @@ export default function Map() {
   };
 
   const flyto = (LATITUDE_WGS84, LONGITUDE_WGS84) => {
-    mapRef.current.flyTo([LATITUDE_WGS84, LONGITUDE_WGS84], 18)
+    mapRef.current.flyTo([LATITUDE_WGS84, LONGITUDE_WGS84], 15)
   }
 
-  console.log("Data Map",data)
 
   return (
     <div className="flex">
       <div className="mr-12">
-      <Test flyto={flyto} setData={setData}/>
+        <Test flyto={flyto} setData={setData} setGrid={setGrid} />
       </div>
       <div className="mt-12">
         <MapContainer
@@ -66,7 +69,7 @@ export default function Map() {
               )
               : null
           }
-
+          <Grid grid={grid}/>
         </MapContainer>
       </div>
       <div>

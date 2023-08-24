@@ -1,22 +1,19 @@
 "use client";
-import { cleanDistDir } from "@/next.config";
 import { useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 
-
-const Test = ({setData, flyto}) => {
+const Test = ({ setData, flyto, setGrid }) => {
   //ปฎิทิน
   const [date, setDate] = useState("");
 
   const handleSelectdate = async (e) => {
     const getdate = e.target.value;
     setDate(getdate);
-
   };
 
   //ค่าวันที่
   const data = date + "T00:00:00.000Z";
- 
+
   //เสริซ
   const [inputValue, setInputValue] = useState("");
   const handleInputChange = (event) => {
@@ -24,15 +21,19 @@ const Test = ({setData, flyto}) => {
   };
 
   //submit
-  const handleSubmit = async(event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await fetch(`http://localhost:3000/api/testsite?targetDate=${data}&enodeb=${inputValue}`)
     const filteredData = await response.json()
     setData(filteredData)
-    flyto(filteredData[0].LATITUDE_WGS84,filteredData[0].LONGITUDE_WGS84)
+    flyto(filteredData[0].LATITUDE_WGS84, filteredData[0].LONGITUDE_WGS84)
+
+    const responseGrid = await fetch(`http://localhost:3000/api/gridhistorical?targetDate=${data}&enodeb=${inputValue}`)
+    const grid = await responseGrid.json()
+    setGrid(grid)
+
   };
- 
-  
+
   return (
     <div className="flex">
       {/* Calendar */}
