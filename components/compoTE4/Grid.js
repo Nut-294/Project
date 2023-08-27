@@ -6,33 +6,33 @@ import { Popup, Rectangle } from "react-leaflet";
 export default function Grid({ grid }) {
   const radius = 50
 
-  const filteredGrid0 = grid.filter(item => item.Dominant_RSRP <= -121) //#89f68d
-  const filteredGrid1 = grid.filter(item => item.Dominant_RSRP >= -120 && item.Dominant_RSRP < -118); //#84fc80
-  const filteredGrid2 = grid.filter(item => item.Dominant_RSRP >= -118 && item.Dominant_RSRP < -116); //#8dfd7f
-  const filteredGrid3 = grid.filter(item => item.Dominant_RSRP >= -116 && item.Dominant_RSRP < -114); //#97fd7e
-  const filteredGrid4 = grid.filter(item => item.Dominant_RSRP >= -114 && item.Dominant_RSRP < -112); //#a3fe7f
-  const filteredGrid5 = grid.filter(item => item.Dominant_RSRP >= -112 && item.Dominant_RSRP < -110); //#aafd7d
-  const filteredGrid6 = grid.filter(item => item.Dominant_RSRP >= -110 && item.Dominant_RSRP < -108); //#b6fd7d
-  const filteredGrid7 = grid.filter(item => item.Dominant_RSRP >= -108 && item.Dominant_RSRP < -106); //#c0fd7e
-  const filteredGrid8 = grid.filter(item => item.Dominant_RSRP >= -106 && item.Dominant_RSRP < -104); //#cbfc7e
-  const filteredGrid9 = grid.filter(item => item.Dominant_RSRP >= -104 && item.Dominant_RSRP < -102); //#d6fd80
-  const filteredGrid10 = grid.filter(item => item.Dominant_RSRP >= -102 && item.Dominant_RSRP < -100); //#e0fd7f
-  const filteredGrid11 = grid.filter(item => item.Dominant_RSRP >= -100 && item.Dominant_RSRP < -98); //#ecfc7f
-  const filteredGrid12 = grid.filter(item => item.Dominant_RSRP >= -98 && item.Dominant_RSRP < -96); //#f2fd7d
-  const filteredGrid13 = grid.filter(item => item.Dominant_RSRP >= -96 && item.Dominant_RSRP < -94); //#fbf97e
-  const filteredGrid14 = grid.filter(item => item.Dominant_RSRP >= -94 && item.Dominant_RSRP < -92); //#fdf27f
-  const filteredGrid15 = grid.filter(item => item.Dominant_RSRP >= -92 && item.Dominant_RSRP < -90); //#fee77d
-  const filteredGrid16 = grid.filter(item => item.Dominant_RSRP >= -90 && item.Dominant_RSRP < -88); //#fddf7f
-  const filteredGrid17 = grid.filter(item => item.Dominant_RSRP >= -88 && item.Dominant_RSRP < -86); //#fdd57f
-  const filteredGrid18 = grid.filter(item => item.Dominant_RSRP >= -86 && item.Dominant_RSRP < -84); //#fbca7e
-  const filteredGrid19 = grid.filter(item => item.Dominant_RSRP >= -84 && item.Dominant_RSRP < -82); //#fbc07e
-  const filteredGrid20 = grid.filter(item => item.Dominant_RSRP >= -82 && item.Dominant_RSRP < -80); //#fcbf7e
-  const filteredGrid21 = grid.filter(item => item.Dominant_RSRP >= -80 && item.Dominant_RSRP < -78); //#feb080
-  const filteredGrid22 = grid.filter(item => item.Dominant_RSRP >= -78 && item.Dominant_RSRP < -76); //#fca47e
-  const filteredGrid23 = grid.filter(item => item.Dominant_RSRP >= -76 && item.Dominant_RSRP < -74); //#fc9b7e
-  const filteredGrid24 = grid.filter(item => item.Dominant_RSRP >= -74 && item.Dominant_RSRP < -72); //#fc917d
-  const filteredGrid25 = grid.filter(item => item.Dominant_RSRP >= -72 && item.Dominant_RSRP < -70); //#fc867c
-  const filteredGrid26 = grid.filter(item => item.Dominant_RSRP >= -70);//#ef847e
+  const filteredGrid0 = grid.filter(item => item.Dominant_RSRP <= -121) 
+  const filteredGrid1 = grid.filter(item => item.Dominant_RSRP >= -120 && item.Dominant_RSRP < -118); 
+  const filteredGrid2 = grid.filter(item => item.Dominant_RSRP >= -118 && item.Dominant_RSRP < -116); 
+  const filteredGrid3 = grid.filter(item => item.Dominant_RSRP >= -116 && item.Dominant_RSRP < -114); 
+  const filteredGrid4 = grid.filter(item => item.Dominant_RSRP >= -114 && item.Dominant_RSRP < -112); 
+  const filteredGrid5 = grid.filter(item => item.Dominant_RSRP >= -112 && item.Dominant_RSRP < -110); 
+  const filteredGrid6 = grid.filter(item => item.Dominant_RSRP >= -110 && item.Dominant_RSRP < -108); 
+  const filteredGrid7 = grid.filter(item => item.Dominant_RSRP >= -108 && item.Dominant_RSRP < -106); 
+  const filteredGrid8 = grid.filter(item => item.Dominant_RSRP >= -106 && item.Dominant_RSRP < -104); 
+  const filteredGrid9 = grid.filter(item => item.Dominant_RSRP >= -104 && item.Dominant_RSRP < -102); 
+  const filteredGrid10 = grid.filter(item => item.Dominant_RSRP >= -102 && item.Dominant_RSRP < -100); 
+  const filteredGrid11 = grid.filter(item => item.Dominant_RSRP >= -100 && item.Dominant_RSRP < -98); 
+  const filteredGrid12 = grid.filter(item => item.Dominant_RSRP >= -98 && item.Dominant_RSRP < -96); 
+  const filteredGrid13 = grid.filter(item => item.Dominant_RSRP >= -96 && item.Dominant_RSRP < -94); 
+  const filteredGrid14 = grid.filter(item => item.Dominant_RSRP >= -94 && item.Dominant_RSRP < -92); 
+  const filteredGrid15 = grid.filter(item => item.Dominant_RSRP >= -92 && item.Dominant_RSRP < -90); 
+  const filteredGrid16 = grid.filter(item => item.Dominant_RSRP >= -90 && item.Dominant_RSRP < -88); 
+  const filteredGrid17 = grid.filter(item => item.Dominant_RSRP >= -88 && item.Dominant_RSRP < -86); 
+  const filteredGrid18 = grid.filter(item => item.Dominant_RSRP >= -86 && item.Dominant_RSRP < -84); 
+  const filteredGrid19 = grid.filter(item => item.Dominant_RSRP >= -84 && item.Dominant_RSRP < -82); 
+  const filteredGrid20 = grid.filter(item => item.Dominant_RSRP >= -82 && item.Dominant_RSRP < -80); 
+  const filteredGrid21 = grid.filter(item => item.Dominant_RSRP >= -80 && item.Dominant_RSRP < -78); 
+  const filteredGrid22 = grid.filter(item => item.Dominant_RSRP >= -78 && item.Dominant_RSRP < -76); 
+  const filteredGrid23 = grid.filter(item => item.Dominant_RSRP >= -76 && item.Dominant_RSRP < -74); 
+  const filteredGrid24 = grid.filter(item => item.Dominant_RSRP >= -74 && item.Dominant_RSRP < -72); 
+  const filteredGrid25 = grid.filter(item => item.Dominant_RSRP >= -72 && item.Dominant_RSRP < -70); 
+  const filteredGrid26 = grid.filter(item => item.Dominant_RSRP >= -70);
 
   return (
     <div>

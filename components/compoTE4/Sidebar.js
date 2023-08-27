@@ -35,7 +35,7 @@ function SideBar() {
           onClick={() => setOpen(!open)}
         />
         <div className="flex flex-col justify-start items-center border-b border-black">
-          <h1 className={`bg-green-200 rounded-md text-base text-center cursor-pointer font-bold text-black border-b-2 border-black pb-4 pt-4 w-full ${!open && "scale-0"}`}>
+          <h1 className={`bg-green-700 rounded-md text-base text-center cursor-pointer font-bold text-black border-b-2 border-black pb-4 pt-4 w-full ${!open && "scale-0"}`}>
             Project
           </h1>
           <div className="w-full">
