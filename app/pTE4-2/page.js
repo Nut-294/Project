@@ -14,8 +14,10 @@ export default function page() {
     <div className="flex">
       <div className="fixed">
         <SideBar />
-      </div>
+      </div >
+      <div className="ml-72">
       <FormPredict setCellname={setCellname}/>
+      </div>
     </div>
   );
 }
