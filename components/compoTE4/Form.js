@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 
-const Test = ({ setData, flyto, setGrid }) => {
+const Form = ({ setData, flyto, setGrid }) => {
   //ปฎิทิน
   const [date, setDate] = useState("");
 
@@ -34,6 +34,7 @@ const Test = ({ setData, flyto, setGrid }) => {
 
   };
 
+ 
   return (
     <div className="flex">
       {/* Calendar */}
@@ -53,7 +54,7 @@ const Test = ({ setData, flyto, setGrid }) => {
               />
             </div>
           </div>
-          <label className="text-white mt-8">Select Date</label>
+          <label className="text-white mt-8">Select eNodeB Name</label>
           <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
             <input
               type="text"
@@ -70,7 +71,7 @@ const Test = ({ setData, flyto, setGrid }) => {
           {/* //Submit */}
           <button
             type="submit"
-            className="mt-4 bg-green-500 h-10 w-20 rounded-md border-2 border-white"
+            className="mt-6 bg-green-500 h-10 w-20 rounded-md border-2 border-white"
           >
             Submit
           </button>
@@ -79,7 +80,7 @@ const Test = ({ setData, flyto, setGrid }) => {
     </div>
   );
 };
-export default Test;
+export default Form;
 // -------------------------------------------------------------------------
 
 // const [disable, setDisable] = useState(true);

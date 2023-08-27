@@ -7,7 +7,7 @@ import { list } from "./functions/sitehistorical";
 import { FloatButton } from 'antd';
 import { ZoomInOutlined } from '@ant-design/icons'
 import Search from "./Search";
-import Test from "./Form";
+import Form from "./Form";
 import { listgrid } from "./functions/gridhistorical"
 import L from "leaflet"
 import Grid from "./Grid";
@@ -34,11 +34,13 @@ export default function Map() {
     mapRef.current.flyTo([LATITUDE_WGS84, LONGITUDE_WGS84], 15)
   }
 
+  // console.log("ดึงข้อมูล 1 site จากฐานข้อมูล",data)
+  console.log("ดึงข้อมูล Grid 1 site จากฐานข้อมูล",grid)
 
   return (
     <div className="flex">
       <div className="mr-12">
-        <Test flyto={flyto} setData={setData} setGrid={setGrid} />
+        <Form flyto={flyto} setData={setData} setGrid={setGrid} />
       </div>
       <div className="mt-12">
         <MapContainer
@@ -51,7 +53,6 @@ export default function Map() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-
           {
             data
               ? data.map((item) =>
