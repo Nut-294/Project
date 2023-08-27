@@ -38,11 +38,11 @@ export default function Map() {
   console.log("ดึงข้อมูล Grid 1 site จากฐานข้อมูล",grid)
 
   return (
-    <div className="flex">
-      <div className="mr-12">
+    <div>
+      <div>
         <Form flyto={flyto} setData={setData} setGrid={setGrid} />
       </div>
-      <div className="mt-12">
+      <div className="mt-8">
         <MapContainer
           ref={mapRef}
           style={{ height: "500px", width: "800px", zIndex: '1' }}
