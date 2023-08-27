@@ -2,13 +2,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { MapContainer, Marker, TileLayer, Popup, Rectangle, Circle } from "react-leaflet";
 import "leaflet/dist/leaflet.css"
-import { list } from "./functions/sitehistorical";
 
 import { FloatButton } from 'antd';
 import { ZoomInOutlined } from '@ant-design/icons'
-import Search from "./Search";
 import Form from "./Form";
-import { listgrid } from "./functions/gridhistorical"
 import L from "leaflet"
 import Grid from "./Grid";
 
@@ -34,7 +31,7 @@ export default function Map() {
     mapRef.current.flyTo([LATITUDE_WGS84, LONGITUDE_WGS84], 15)
   }
 
-  // console.log("ดึงข้อมูล 1 site จากฐานข้อมูล",data)
+  console.log("ดึงข้อมูล 1 site จากฐานข้อมูล",data)
   console.log("ดึงข้อมูล Grid 1 site จากฐานข้อมูล",grid)
 
   return (
