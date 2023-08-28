@@ -56,7 +56,7 @@ export default function Map() {
       <div className="mt-8">
         <MapContainer
           ref={mapRef}
-          style={{ height: "500px", width: "900px", zIndex: '1' }}
+          style={{ height: "500px", width: "910px", zIndex: '1' }}
           center={[13.773481, 100.561079]}
           zoom={30}
           scrollWheelZoom={true}>
