@@ -70,7 +70,7 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
           <div>
             <input
               type="date"
-              className="text-gray-500 rounded-md h-12 w-36 p-2 outline-0"
+              className="text-gray-500 rounded-md h-12 w-36 p-2 outline-0 mt-1"
               name="todate"
               onChange={(e) => {
                 handleSelectdate(e);
@@ -81,7 +81,7 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
         </div>
 
         {/* Search */}
-        <div className="mr-5">
+        <div className="mr-5 mt-1">
           <label className="text-white">Select eNodeB Name</label>
           <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
             <input
