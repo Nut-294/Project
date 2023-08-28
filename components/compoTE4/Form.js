@@ -2,9 +2,10 @@
 import { useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 
-const Form = ({ setData, flyto, setGrid }) => {
+const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
   //ปฎิทิน
   const [date, setDate] = useState("");
+  const [cell, setCell] = useState("")
 
   const handleSelectdate = async (e) => {
     const getdate = e.target.value;
@@ -35,7 +36,30 @@ const Form = ({ setData, flyto, setGrid }) => {
     );
     const grid = await responseGrid.json();
     setGrid(grid);
+    const groupData = groupKey(grid)
+    setCell(groupData)
   };
+
+  function groupKey(cell) {
+    const groupedData = Object.values(cell).reduce(function (acc, cur) {
+      const groupKey = cur.Cell_Name; // Group by ...
+      acc[groupKey] = acc[groupKey] || [];
+      acc[groupKey].push(cur);
+      return acc;
+    }, {});
+    return groupedData
+  }
+
+  const handleSelect = (event) => {
+
+    const listCellName = event.target.value
+    setCellname(cell[listCellName])
+  }
+
+  const handleSelectDominant = (event) => {
+    const listDominant = event.target.value
+    setDominant(listDominant)
+  }
 
   return (
     <div>
@@ -72,9 +96,54 @@ const Form = ({ setData, flyto, setGrid }) => {
             </i>
           </div>
         </div>
+        {
+          cell
+            ? (
+              <div className="mr-5">
+                <label className="text-white">Select Cell Name</label>
+                <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
+
+                  <i className="mt-3 text-l mx-4">
+                    <select onChange={handleSelect}>
+                      <option defaultChecked >Select Cell Name</option>
+                      <option value="null">All</option>
+                      {
+                      cell && Object.keys(cell).map((item, index) =>
+                        <option key={index} value={item}>{item}</option>
+                      )
+                      }
+                    </select>
+                  </i>
+                </div>
+
+              </div>
+
+
+            )
+            : null
+        }
+        {
+          cell
+            ? (
+              <div>
+                <label className="text-white">Select Dominant</label>
+                <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
+
+                  <i className="mt-3 text-l mx-4">
+                    <select onChange={handleSelectDominant}>
+                      <option defaultChecked>Select Dominant</option>
+                      <option value="Dominant_RSRP" defaultValue="Dominant_RSRP">Dominant_RSRP</option>
+                      <option value="Dominant_RSRQ">Dominant_RSRQ</option>
+                    </select>
+                  </i>
+                </div>
+              </div>
+            )
+            : null
+        }
 
         {/* //Submit */}
-        <div className="pb-5">
+        <div className="pb-5 mx-4">
           <button
             type="submit"
             className="mt-5 bg-green-500 h-10 w-20 rounded-md border-2 border-white"
@@ -86,4 +155,5 @@ const Form = ({ setData, flyto, setGrid }) => {
     </div>
   );
 };
+
 export default Form;
