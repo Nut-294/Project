@@ -80,7 +80,7 @@ const FormPredict = ({setCellname}) => {
     <div>
       {/* ---------------------------------Form--------------------------------------- */}
       {/* Calendar */}
-      <form onSubmit={handleSubmit} className="flex mt-8">
+      <form onSubmit={handleSubmit} className="flex mt-8 my-8">
         <div className="mr-5">
           <label className="text-white">Select Date</label>
           <div>
@@ -123,7 +123,7 @@ const FormPredict = ({setCellname}) => {
           </button>
         </div>
       </form>
-      <div style={{ height: 500, width: 1000 }} className="bg-white">
+      <div style={{ height: 500, width: 1000 , borderRadius:"4px"}} className="bg-white">
         <DataGrid
           rows={CellData}
           columns={columns}
