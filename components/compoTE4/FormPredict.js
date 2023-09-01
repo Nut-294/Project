@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { DataGrid, GridToolbar, GridPagination } from "@mui/x-data-grid";
-import { TablePagination, IconButton, Checkbox } from "@mui/material";
 import { BiSearchAlt} from "react-icons/bi"
+import { TablePagination } from '@mui/material'
 const columns = [
   { field: "eNodeB_Name", headerName: "eNodeB", width: 80 },
   { field: "Sector", headerName: "Sector", width: 80 },
@@ -75,7 +75,7 @@ const FormPredict = ({setCellname}) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-
+  
   return (
     <div>
       {/* ---------------------------------Form--------------------------------------- */}
@@ -142,6 +142,7 @@ const FormPredict = ({setCellname}) => {
           onPageChange={handlePageChange}
         />
       </div>
+      
     </div>
   );
 };
