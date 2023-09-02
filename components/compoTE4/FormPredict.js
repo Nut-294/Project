@@ -93,15 +93,49 @@ const FormPredict = ({ setCellname }) => {
     );
     const filteredAllData = await responsed.json(); //ข้อมูลกริดที่กรอง cellname แล้ว
 
-    // const combinedData = filteredAllData.map((item) => ({
-    //   ...item,
-    //   cellName: [...filteredData],
-    // }));
+    const Frequency = [filteredData[0].Frequency]
+    const parsedFrequency = parseInt(Frequency[0], 10);
+    const LATITUDE_WGS84 = [filteredData[0].LATITUDE_WGS84]
+    const parsedLATITUDE_WGS84 = parseFloat(LATITUDE_WGS84[0]);
+    const LONGITUDE_WGS84 = [filteredData[0].LONGITUDE_WGS84]
+    const parsedLONGITUDE_WGS84 = parseFloat(LONGITUDE_WGS84[0]);
+    const REFERENCESIGNALPWR = [filteredData[0].REFERENCESIGNALPWR]
+    const parsedREFERENCESIGNALPWR = parseInt(REFERENCESIGNALPWR[0], 10);
+    const ant_gain = [filteredData[0].ant_gain]
+    const parsedant_gain = parseFloat(ant_gain[0]);
+    const ant_height = [filteredData[0].ant_height]
+    const parsedant_height = parseFloat(ant_height[0]);
+    const ant_logical_beam = [filteredData[0].ant_logical_beam]
+    const parsedant_logical_beam = parseInt(ant_logical_beam[0], 10);
+    const ant_model = [filteredData[0].ant_model].toString()
+    const delta_azimuth = [filteredData[0].delta_azimuth]
+    const parseddelta_azimuth = parseInt(delta_azimuth[0], 10);
+    const e_tilt = [filteredData[0].e_tilt]
+    const parsede_tilt = parseInt(e_tilt[0], 10);
+    const horizontal_beam_width = [filteredData[0].horizontal_beam_width]
+    const parsedhorizontal_beam_width = parseInt(horizontal_beam_width[0], 10);
+    const m_tilt = [filteredData[0].m_tilt]
+    const parsedm_tilt = parseInt(m_tilt[0], 10);
+    const physical_azimuth = [filteredData[0].physical_azimuth]
+    const parsedphysical_azimuth = parseInt(physical_azimuth[0], 10);
+
 
     const combinedData = filteredAllData.map(item1 => {
       return {
         ...item1,
-        ...filteredData[0]
+        Frequency: parsedFrequency,
+        LATITUDE_WGS84: parsedLATITUDE_WGS84,
+        LONGITUDE_WGS84: parsedLONGITUDE_WGS84,
+        REFERENCESIGNALPWR: parsedREFERENCESIGNALPWR,
+        ant_gain: parsedant_gain,
+        ant_height: parsedant_height,
+        ant_logical_beam: parsedant_logical_beam,
+        ant_model: ant_model,
+        delta_azimuth: parseddelta_azimuth,
+        e_tilt: parsede_tilt,
+        horizontal_beam_width:parsedhorizontal_beam_width,
+        m_tilt: parsedm_tilt,
+        physical_azimuth: parsedphysical_azimuth
       };
     });
 
@@ -196,3 +230,8 @@ const FormPredict = ({ setCellname }) => {
 };
 
 export default FormPredict;
+
+// const combinedData = filteredAllData.map((item) => ({
+    //   ...item,
+    //   cellName: [...filteredData],
+    // }));
