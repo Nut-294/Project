@@ -26,7 +26,7 @@ const FormPredict = ({ setCellname }) => {
   const [date, setDate] = useState("");
   const [inputValue, setInputValue] = useState("");
 
-  const [ dataTable, setDatatable] = useState([])
+  const [dataTable, setDatatable] = useState([])
 
   const handleSelectdate = async (e) => {
     const getdate = e.target.value;
@@ -81,7 +81,7 @@ const FormPredict = ({ setCellname }) => {
   const handleSubmitID = async (event) => {
     event.preventDefault();
     const id = parseInt(selectionModel[0], 10);
-    
+
     const response = await fetch(
       `http://localhost:3000/api/IdCellNameHistorical?targetDate=${id}`
     );
@@ -93,17 +93,23 @@ const FormPredict = ({ setCellname }) => {
     );
     const filteredAllData = await responsed.json(); //ข้อมูลกริดที่กรอง cellname แล้ว
 
-    const combinedData = filteredAllData.map((item) => ({
-      ...item,
-      cellName : [...filteredData],
-    }));
-    
-    console.log("ข้อมูล cellname",filteredData)
-    console.log("ข้อมูลกริดที่กรอง cellname แล้ว",filteredAllData)
-    console.log("รวมข้อมูล",combinedData)
+    // const combinedData = filteredAllData.map((item) => ({
+    //   ...item,
+    //   cellName: [...filteredData],
+    // }));
+
+    const combinedData = filteredAllData.map(item1 => {
+      return {
+        ...item1,
+        ...filteredData[0]
+      };
+    });
+
+    console.log("ข้อมูล cellname", filteredData)
+    console.log("ข้อมูลกริดที่กรอง cellname แล้ว", filteredAllData)
+    console.log("รวมข้อมูล", combinedData)
 
   }
- 
 
   return (
     <div>
@@ -173,16 +179,16 @@ const FormPredict = ({ setCellname }) => {
         />
       </div>
       <form onSubmit={handleSubmitID}>
-      <div className="pb-5 my-1 flex justify-center items-center" >
-        <button
-          type="submit"
-          className="mt-5 bg-green-500 h-10 w-20 rounded-md border-2 border-white"
-        >
-          Predict
-        </button>
-      </div>
+        <div className="pb-5 my-1 flex justify-center items-center" >
+          <button
+            type="submit"
+            className="mt-5 bg-green-500 h-10 w-20 rounded-md border-2 border-white"
+          >
+            Predict
+          </button>
+        </div>
       </form>
-      
+
 
 
     </div>
