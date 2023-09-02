@@ -8,7 +8,6 @@ import { useState } from "react";
 
 export default function page() {
   const [cellname, setCellname] = useState([])
-  console.log(cellname)
 
   return (
     <div className="flex">

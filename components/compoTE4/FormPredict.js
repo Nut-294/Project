@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { DataGrid, GridToolbar, GridPagination } from "@mui/x-data-grid";
-import { BiSearchAlt} from "react-icons/bi"
+import { BiSearchAlt } from "react-icons/bi"
 import { TablePagination } from '@mui/material'
 const columns = [
   { field: "eNodeB_Name", headerName: "eNodeB", width: 80 },
@@ -22,9 +22,11 @@ const columns = [
   { field: "delta_azimuth", headerName: "DAzimuth", width: 100 },
 ];
 
-const FormPredict = ({setCellname}) => {
+const FormPredict = ({ setCellname }) => {
   const [date, setDate] = useState("");
   const [inputValue, setInputValue] = useState("");
+
+  const [ dataTable, setDatatable] = useState([])
 
   const handleSelectdate = async (e) => {
     const getdate = e.target.value;
@@ -51,8 +53,8 @@ const FormPredict = ({setCellname}) => {
     setCellData(filteredData);
   };
 
-  console.log("CellData",CellData)  
-  
+  // console.log("CellData", CellData)
+
   //ตาราง
   const [sortModel, setSortModel] = useState([]);
   const [selectionModel, setSelectionModel] = useState([]);
@@ -63,8 +65,8 @@ const FormPredict = ({setCellname}) => {
     setSortModel(model);
   };
 
-  const handleSelectionModelChange = (model) => {
-    setSelectionModel(model);
+  const handleSelectionModelChange = (id) => {
+    setSelectionModel(id)
   };
 
   const handlePageChange = (newPage) => {
@@ -75,7 +77,34 @@ const FormPredict = ({setCellname}) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-  
+
+  const handleSubmitID = async (event) => {
+    event.preventDefault();
+    const id = parseInt(selectionModel[0], 10);
+    
+    const response = await fetch(
+      `http://localhost:3000/api/IdCellNameHistorical?targetDate=${id}`
+    );
+    const filteredData = await response.json(); //ข้อมูล cellname
+    const cellName = filteredData[0].Cell_Name
+
+    const responsed = await fetch(
+      `http://localhost:3000/api/GridPredict?targetDate=${data}&cellName=${cellName}`
+    );
+    const filteredAllData = await responsed.json(); //ข้อมูลกริดที่กรอง cellname แล้ว
+
+    const combinedData = filteredAllData.map((item) => ({
+      ...item,
+      cellName : [...filteredData],
+    }));
+    
+    console.log("ข้อมูล cellname",filteredData)
+    console.log("ข้อมูลกริดที่กรอง cellname แล้ว",filteredAllData)
+    console.log("รวมข้อมูล",combinedData)
+
+  }
+ 
+
   return (
     <div>
       {/* ---------------------------------Form--------------------------------------- */}
@@ -114,7 +143,7 @@ const FormPredict = ({setCellname}) => {
         </div>
 
         {/* //Submit */}
-        <div className="pb-5">
+        <div className="pb-5 my-1">
           <button
             type="submit"
             className="mt-5 bg-green-500 h-10 w-20 rounded-md border-2 border-white"
@@ -123,15 +152,16 @@ const FormPredict = ({setCellname}) => {
           </button>
         </div>
       </form>
-      <div style={{ height: 500, width: 1000 , borderRadius:"4px"}} className="bg-white">
+      <div style={{ height: 500, width: 1000, borderRadius: "4px" }} className="bg-white">
         <DataGrid
           rows={CellData}
           columns={columns}
           sortModel={sortModel}
           onSortModelChange={handleSortModelChange}
           selectionModel={selectionModel}
-          onSelectionModelChange={handleSelectionModelChange}
           checkboxSelection
+          disableRowSelectionOnClick
+          onRowSelectionModelChange={(id) => handleSelectionModelChange(id)}
           components={{
             Toolbar: GridToolbar,
             Pagination: GridPagination,
@@ -142,7 +172,19 @@ const FormPredict = ({setCellname}) => {
           onPageChange={handlePageChange}
         />
       </div>
+      <form onSubmit={handleSubmitID}>
+      <div className="pb-5 my-1 flex justify-center items-center" >
+        <button
+          type="submit"
+          className="mt-5 bg-green-500 h-10 w-20 rounded-md border-2 border-white"
+        >
+          Predict
+        </button>
+      </div>
+      </form>
       
+
+
     </div>
   );
 };
