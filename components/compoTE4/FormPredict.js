@@ -22,7 +22,7 @@ const columns = [
   { field: "delta_azimuth", headerName: "DAzimuth", width: 100 },
 ];
 
-const FormPredict = ({ setCellname }) => {
+const FormPredict = ({ setCellname, setCombinedData }) => {
   const [date, setDate] = useState("");
   const [inputValue, setInputValue] = useState("");
 
@@ -139,10 +139,10 @@ const FormPredict = ({ setCellname }) => {
       };
     });
 
-    console.log("ข้อมูล cellname", filteredData)
-    console.log("ข้อมูลกริดที่กรอง cellname แล้ว", filteredAllData)
-    console.log("รวมข้อมูล", combinedData)
+    setCombinedData(combinedData)
 
+    // console.log("ข้อมูล cellname", filteredData)
+    // console.log("ข้อมูลกริดที่กรอง cellname แล้ว", filteredAllData)
   }
 
   return (
