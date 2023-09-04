@@ -26,8 +26,6 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
   const [date, setDate] = useState("");
   const [inputValue, setInputValue] = useState("");
 
-  const [dataTable, setDatatable] = useState([])
-
   const handleSelectdate = async (e) => {
     const getdate = e.target.value;
     setDate(getdate);
@@ -67,6 +65,7 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
 
   const handleSelectionModelChange = (id) => {
     setSelectionModel(id)
+
   };
 
   const handlePageChange = (newPage) => {
@@ -80,69 +79,110 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
 
   const handleSubmitID = async (event) => {
     event.preventDefault();
-    const id = parseInt(selectionModel[0], 10);
 
-    const response = await fetch(
-      `http://localhost:3000/api/IdCellNameHistorical?targetDate=${id}`
-    );
-    const filteredData = await response.json(); //ข้อมูล cellname
-    const cellName = filteredData[0].Cell_Name
+    const id = selectionModel
 
-    const responsed = await fetch(
-      `http://localhost:3000/api/GridPredict?targetDate=${data}&cellName=${cellName}`
-    );
-    const filteredAllData = await responsed.json(); //ข้อมูลกริดที่กรอง cellname แล้ว
-
-    const Frequency = [filteredData[0].Frequency]
-    const parsedFrequency = parseInt(Frequency[0], 10);
-    const LATITUDE_WGS84 = [filteredData[0].LATITUDE_WGS84]
-    const parsedLATITUDE_WGS84 = parseFloat(LATITUDE_WGS84[0]);
-    const LONGITUDE_WGS84 = [filteredData[0].LONGITUDE_WGS84]
-    const parsedLONGITUDE_WGS84 = parseFloat(LONGITUDE_WGS84[0]);
-    const REFERENCESIGNALPWR = [filteredData[0].REFERENCESIGNALPWR]
-    const parsedREFERENCESIGNALPWR = parseInt(REFERENCESIGNALPWR[0], 10);
-    const ant_gain = [filteredData[0].ant_gain]
-    const parsedant_gain = parseFloat(ant_gain[0]);
-    const ant_height = [filteredData[0].ant_height]
-    const parsedant_height = parseFloat(ant_height[0]);
-    const ant_logical_beam = [filteredData[0].ant_logical_beam]
-    const parsedant_logical_beam = parseInt(ant_logical_beam[0], 10);
-    const ant_model = [filteredData[0].ant_model].toString()
-    const delta_azimuth = [filteredData[0].delta_azimuth]
-    const parseddelta_azimuth = parseInt(delta_azimuth[0], 10);
-    const e_tilt = [filteredData[0].e_tilt]
-    const parsede_tilt = parseInt(e_tilt[0], 10);
-    const horizontal_beam_width = [filteredData[0].horizontal_beam_width]
-    const parsedhorizontal_beam_width = parseInt(horizontal_beam_width[0], 10);
-    const m_tilt = [filteredData[0].m_tilt]
-    const parsedm_tilt = parseInt(m_tilt[0], 10);
-    const physical_azimuth = [filteredData[0].physical_azimuth]
-    const parsedphysical_azimuth = parseInt(physical_azimuth[0], 10);
-
-
-    const combinedData = filteredAllData.map(item1 => {
-      return {
-        ...item1,
-        Frequency: parsedFrequency,
-        LATITUDE_WGS84: parsedLATITUDE_WGS84,
-        LONGITUDE_WGS84: parsedLONGITUDE_WGS84,
-        REFERENCESIGNALPWR: parsedREFERENCESIGNALPWR,
-        ant_gain: parsedant_gain,
-        ant_height: parsedant_height,
-        ant_logical_beam: parsedant_logical_beam,
-        ant_model: ant_model,
-        delta_azimuth: parseddelta_azimuth,
-        e_tilt: parsede_tilt,
-        horizontal_beam_width:parsedhorizontal_beam_width,
-        m_tilt: parsedm_tilt,
-        physical_azimuth: parsedphysical_azimuth
-      };
+    const filteredData = id.map(async (id) => {
+      const response = await fetch(
+        `http://localhost:3000/api/IdCellNameHistorical?targetDate=${id}`
+      );
+      return response.json();
     });
 
-    setCombinedData(combinedData)
+    const dataArray = await Promise.all(filteredData); //ข้อมูล cellname
 
-    // console.log("ข้อมูล cellname", filteredData)
-    // console.log("ข้อมูลกริดที่กรอง cellname แล้ว", filteredAllData)
+    const cellNames = dataArray.map(item => item[0].Cell_Name);
+    const targetDate = data
+    const responsed = [];
+
+    for (const cellName of cellNames) {
+      const response = await fetch(
+        `http://localhost:3000/api/GridPredict?targetDate=${targetDate}&cellName=${cellName}`
+      );
+      const data = await response.json();
+      responsed.push(data); //ข้อมูลกริด
+    }
+
+    // สร้าง Map เพื่อเก็บข้อมูล Frequency จาก cellnamedata
+    const frequencyMap = new Map();
+    const LATITUDE_WGS84Map = new Map();
+    const LONGITUDE_WGS84Map = new Map();
+    const ant_heightMap = new Map();
+    const REFERENCESIGNALPWRMap = new Map();
+    const m_tiltMap = new Map();
+    const e_tiltMap = new Map();
+    const physical_azimuthMap = new Map();
+    const horizontal_beam_widthMap = new Map();
+    const ant_gainMap = new Map();
+    const ant_logical_beamMap = new Map();
+    const ant_modelMap = new Map();
+    const delta_azimuthMap = new Map();
+
+    dataArray.forEach(item => {
+      const cellName = item[0].Cell_Name;
+      const Frequency = item[0].Frequency;
+      const LATITUDE_WGS84 = item[0].LATITUDE_WGS84;
+      const LONGITUDE_WGS84 = item[0].LONGITUDE_WGS84;
+      const ant_height = item[0].ant_height;
+      const REFERENCESIGNALPWR = item[0].REFERENCESIGNALPWR;
+      const m_tilt = item[0].m_tilt;
+      const e_tilt = item[0].e_tilt;
+      const physical_azimuth = item[0].physical_azimuth;
+      const horizontal_beam_width = item[0].horizontal_beam_width;
+      const ant_gain = item[0].ant_gain;
+      const ant_logical_beam = item[0].ant_logical_beam;
+      const ant_model = item[0].ant_model;
+      const delta_azimuth = item[0].delta_azimuth;
+
+      frequencyMap.set(cellName, Frequency);
+      LATITUDE_WGS84Map.set(cellName, LATITUDE_WGS84);
+      LONGITUDE_WGS84Map.set(cellName, LONGITUDE_WGS84);
+      ant_heightMap.set(cellName, ant_height);
+      REFERENCESIGNALPWRMap.set(cellName, REFERENCESIGNALPWR);
+      m_tiltMap.set(cellName, m_tilt);
+      e_tiltMap.set(cellName, e_tilt);
+      physical_azimuthMap.set(cellName, physical_azimuth);
+      horizontal_beam_widthMap.set(cellName, horizontal_beam_width);
+      ant_gainMap.set(cellName, ant_gain);
+      ant_logical_beamMap.set(cellName, ant_logical_beam);
+      ant_modelMap.set(cellName, ant_model);
+      delta_azimuthMap.set(cellName, delta_azimuth);
+
+    });
+
+    // รวมข้อมูลจาก griddata และ cellnamedata โดยใช้ map
+    const mergedData = responsed.map(gridItem => {
+      return gridItem.map(item => ({
+        id: item.id,
+        Dominant_RSRP: item.Dominant_RSRP,
+        Dominant_RSRQ: item.Dominant_RSRQ,
+        Latitude: item.Latitude,
+        Longitude: item.Longitude,
+        Sector: item.Sector,
+        Time: item.Time,
+        eNodeB_Name: item.eNodeB_Name,
+        Cell_Name: item.Cell_Name,
+        Frequency: frequencyMap.get(item.Cell_Name) || "",
+        LATITUDE_WGS84: LATITUDE_WGS84Map.get(item.Cell_Name) || "",
+        LONGITUDE_WGS84: LONGITUDE_WGS84Map.get(item.Cell_Name) || "",
+        ant_height: ant_heightMap.get(item.Cell_Name) || "",
+        REFERENCESIGNALPWR: REFERENCESIGNALPWRMap.get(item.Cell_Name) || "",
+        m_tilt: m_tiltMap.get(item.Cell_Name) || "",
+        e_tilt: e_tiltMap.get(item.Cell_Name) || "",
+        physical_azimuth: physical_azimuthMap.get(item.Cell_Name) || "",
+        horizontal_beam_width: horizontal_beam_widthMap.get(item.Cell_Name) || "",
+        ant_gain: ant_gainMap.get(item.Cell_Name) || "",
+        ant_logical_beam: ant_logical_beamMap.get(item.Cell_Name) || "",
+        ant_model: ant_modelMap.get(item.Cell_Name) || "",
+        delta_azimuth: delta_azimuthMap.get(item.Cell_Name) || 0,
+
+      }));
+    });
+
+    setCombinedData(mergedData)
+    console.log("ข้อมูล grid", responsed)
+    console.log("ข้อมูล Cellname", dataArray)
+    
   }
 
   return (
