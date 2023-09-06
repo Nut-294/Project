@@ -5,7 +5,7 @@ import { BiSearchAlt } from "react-icons/bi"
 import { TablePagination } from '@mui/material'
 const columns = [
   { field: "eNodeB_Name", headerName: "eNodeB", width: 80 },
-  { field: "Sector", headerName: "Sector", width: 80 },
+  { field: "Sector", headerName: "Sector", width: 100 },
   { field: "Cell_Name", headerName: "Cell Name", width: 120 },
   { field: "Frequency", headerName: "Frequency", width: 80 },
   { field: "LATITUDE_WGS84", headerName: "LATITUDE", width: 120 },

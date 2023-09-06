@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react'
 
 const Predict = ({ combinedData }) => {
 
-    console.log("รวมข้อมูล", combinedData)
-
     const [distances, setDistances] = useState([]);
 
     const R = 6371.0;
@@ -37,22 +35,23 @@ const Predict = ({ combinedData }) => {
         setDistances(newDistances);
     }, [combinedData]);
 
-    if (distances.length > 0) {
-        // ทำงานกับ distances ได้เลย
-        const mergedData = combinedData.map((data1, index1) => {
-            return data1.map((data2, index2) => {
-                const distance = distances[index1][index2];
-                return {
-                    ...data2,
-                    distance: distance
-                };
+    useEffect(() => {
+        if (distances.length > 0) {
+            const mergedData = combinedData.map((data1, index1) => {
+                return data1.map((data2, index2) => {
+                    const distance = distances[index1][index2];
+                    return {
+                        ...data2,
+                        distance: distance
+                    };
+                });
             });
-        });
-        console.log("Merged Data:", mergedData);
-        console.log("Distances:", distances);
-    } else {
-        // distances ยังไม่พร้อมใช้งาน ให้ใส่โค้ดที่จำเป็นตรงนี้หรือใช้ข้อความแสดงรอการโหลด
-    }
+            console.log("Merged Data:", mergedData);
+            console.log("Distances:", distances);
+        }
+    }, [distances]);
+
+    
 
     return (
         <div></div>
