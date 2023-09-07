@@ -6,16 +6,16 @@ const BaseMap = () => {
     return (
         <LayersControl position='topright'>
 
-            <LayersControl.BaseLayer name='openstreetmap' checked>
+            <LayersControl.BaseLayer name='Open Streetmap' checked>
                 <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
             </LayersControl.BaseLayer>
 
-            <LayersControl.BaseLayer name='arcgis'>
-                <TileLayer url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}' />
+            <LayersControl.BaseLayer name='Google Satellite'>
+                <TileLayer url='https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}' />
             </LayersControl.BaseLayer>
 
-            <LayersControl.BaseLayer name='stadiamap'>
-                <TileLayer url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png' />
+            <LayersControl.BaseLayer name='Google Hybrid'>
+                <TileLayer url='http://mts2.google.com/vt/lyrs=y&x={x}&y={y}&z={z}' />
             </LayersControl.BaseLayer>
 
         </LayersControl>
