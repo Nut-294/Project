@@ -50,6 +50,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -63,6 +64,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -76,6 +78,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -89,6 +92,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -102,6 +106,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -115,6 +120,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -128,6 +134,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -141,6 +148,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                    <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -154,6 +162,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -167,6 +176,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -180,6 +190,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -193,6 +204,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -206,6 +218,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -219,6 +232,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -232,6 +246,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -245,6 +260,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -258,6 +274,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -271,6 +288,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -284,6 +302,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -297,6 +316,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -310,6 +330,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -323,6 +344,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -336,6 +358,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -349,6 +372,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -362,6 +386,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -375,6 +400,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -388,6 +414,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )
@@ -406,6 +433,7 @@ export default function Grid({ grid, cellname, dominant }) {
                   >
                     <Popup>
                       <h2>Dominant_RSRP: {item.Dominant_RSRP} </h2>
+                      <h2>id: {item.id} </h2>
                     </Popup>
                   </Rectangle>
                 )

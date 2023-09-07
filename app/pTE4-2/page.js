@@ -19,7 +19,7 @@ export default function page() {
       </div >
       <div className="ml-72">
         <FormPredict setCellname={setCellname} setCombinedData={setCombinedData} />
-        <Predict combinedData={combinedData}/>
+        {/* <Predict combinedData={combinedData} /> */}
       </div>
     </div>
   );
