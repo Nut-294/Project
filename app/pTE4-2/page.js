@@ -11,7 +11,7 @@ export default function page() {
   const [cellname, setCellname] = useState([])
   const [combinedData, setCombinedData] = useState([])
 
-
+  console.log("รวม", combinedData)
   return (
     <div className="flex">
       <div className="fixed">
@@ -19,7 +19,7 @@ export default function page() {
       </div >
       <div className="ml-72">
         <FormPredict setCellname={setCellname} setCombinedData={setCombinedData} />
-        {/* <Predict combinedData={combinedData} /> */}
+        <Predict combinedData={combinedData} />
       </div>
     </div>
   );

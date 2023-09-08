@@ -9,10 +9,10 @@ export const GET = async (request,response) => {
     const longitude = parseFloat(url.searchParams.get("longitude"));
     
     // ขอบเขตสีเหลี่ยม 50 เมตร
-    const latMin = latitude - 0.0008;
-    const latMax = latitude + 0.0008;
-    const lonMin = longitude - 0.0008;
-    const lonMax = longitude + 0.0008;
+    const latMin = latitude - 0.005;
+    const latMax = latitude + 0.005;
+    const lonMin = longitude - 0.005;
+    const lonMax = longitude + 0.005;
 
     try {
         const gridhistorical = await prisma.gridhistorical.findMany({
