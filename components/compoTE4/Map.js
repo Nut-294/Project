@@ -53,8 +53,9 @@ export default function Map() {
           setCellname={setCellname}
           setDominant={setDominant} />
       </div>
-      <div className="mt-8">
+      <div className="flex">
         <MapContainer
+        className="mt-8"
           ref={mapRef}
           style={{ height: "500px", width: "910px", zIndex: '1' }}
           center={[13.773481, 100.561079]}
@@ -102,22 +103,12 @@ export default function Map() {
               : null
           }
         </MapContainer>
-        <div>
-          <div className="bg-gradient-to-r from-red-500 via-yellow-300 to-green-500 w-full h-10 mt-2" />
-          {/* แนวตั้ง bg-gradient-to-b */}
-          <div class="flex items-center">
-            <h2 class="mr-2 text-white">-120</h2>
-            <div class="flex-1 h-px"></div>
-            <h2 class="ml-2 text-white">-70</h2>
-          </div>
-          <div class="flex items-center">
-            <h2 class="mr-2 text-white">dBm</h2>
-            <div class="flex-1 h-px"></div>
-            <h2 class="ml-2 text-white">dBm</h2>
-          </div>
-
+        <div className="absolute mt-8">
+        <div className="text-white ml-[1000px] border-2 border-white w-24 h-10 p-2 rounded-md">-120 dBm</div>
+          <div className=" mt-48 rotate-90 bg-gradient-to-r from-green-500 via-yellow-300 to-red-500 h-10 w-[400px] ml-[848px]" />
+          <div className="text-white ml-[1000px] mt-48 border-2 border-white w-24 h-10 p-2 rounded-md">-70 dBm</div>
         </div>
-      </div>
+        </div>
       <div>
         <FloatButton onClick={toggleTable} className="float-button" />
       </div>
@@ -184,7 +175,6 @@ export default function Map() {
             )}
           </tbody>
         </table>
-
       </div>
     </div>
   )
