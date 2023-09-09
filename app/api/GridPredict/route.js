@@ -8,7 +8,7 @@ export const GET = async (request,response) => {
     const latitude = parseFloat(url.searchParams.get("latitude"));
     const longitude = parseFloat(url.searchParams.get("longitude"));
     
-    // ขอบเขตสีเหลี่ยม 50 เมตร
+    // ขอบเขตสีเหลี่ยม 500 เมตร
     const latMin = latitude - 0.005;
     const latMax = latitude + 0.005;
     const lonMin = longitude - 0.005;
