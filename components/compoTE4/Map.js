@@ -105,7 +105,7 @@ export default function Map() {
         </MapContainer>
         <div className="absolute mt-8">
         <div className="text-white ml-[1000px] border-2 border-white w-24 h-10 p-2 rounded-md">-120 dBm</div>
-          <div className=" mt-48 rotate-90 bg-gradient-to-r from-green-500 via-yellow-300 to-red-500 h-10 w-[400px] ml-[848px]" />
+          <div className=" mt-48 rotate-90 bg-gradient-to-r from-red-500 via-yellow-300 to-green-500 h-10 w-[400px] ml-[848px]" />
           <div className="text-white ml-[1000px] mt-48 border-2 border-white w-24 h-10 p-2 rounded-md">-70 dBm</div>
         </div>
         </div>

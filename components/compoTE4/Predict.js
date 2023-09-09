@@ -50,12 +50,12 @@ const Predict = ({ combinedData }) => {
                     const PL = 36.2 + 30.2 * Math.log10(distance) + 12 * Math.log10(hb) + 0.1 * Math.log10(hb) * Math.log10(distance) - 3.2 * Math.pow(Math.log10(11.75 * h), 2) + Gf
 
                     // คำนวณ Received Signal โดยสมการ Power + Antenna Gain - Path Loss
-                    const Power = data2.REFERENCESIGNALPWR; // พลังงานส่งออกจากสถานีฐาน
+                    const Power = data2.REFERENCESIGNALPWR/10; // พลังงานส่งออกจากสถานีฐาน
                     const AntennaGain = data2.ant_gain; // Antenna Gain จากสถานีฐาน
+
 
                     const ReceivedSignal = Power + AntennaGain - PL;
                    
-                    console.log("Gf",Gf)
 
                     return {
                         ...data2,
