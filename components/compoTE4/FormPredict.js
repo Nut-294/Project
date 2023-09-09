@@ -84,7 +84,7 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
 
     const targetDate = data
 
-    const cellNameData = CellData.filter((item) => id.includes(item.id));
+    const cellNameData = CellData.filter((item) => id.includes(item.id)); //ข้อมูล cellname จาก id
 
     const latitude = cellNameData[0].LATITUDE_WGS84
     const longitude = cellNameData[0].LONGITUDE_WGS84
@@ -145,12 +145,12 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
       {/* ---------------------------------Form--------------------------------------- */}
       {/* Calendar */}
       <form onSubmit={handleSubmit} className="flex mt-8 my-8">
-        <div className="mr-5">
+        <div className="mr-5 mt-1">
           <label className="text-white">Select Date</label>
           <div>
             <input
               type="date"
-              className="text-gray-500 rounded-md h-12 w-36 p-2 outline-0 mt-1"
+              className="text-gray-500 rounded-md h-12 w-36 p-2 outline-0"
               name="todate"
               onChange={(e) => {
                 handleSelectdate(e);
