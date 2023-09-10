@@ -5,7 +5,7 @@ import { BiSearchAlt } from "react-icons/bi";
 const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
   //ปฎิทิน
   const [date, setDate] = useState("");
-  const [cell, setCell] = useState("")
+  const [cell, setCell] = useState("");
 
   const handleSelectdate = async (e) => {
     const getdate = e.target.value;
@@ -36,8 +36,8 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
     );
     const grid = await responseGrid.json();
     setGrid(grid);
-    const groupData = groupKey(grid)
-    setCell(groupData)
+    const groupData = groupKey(grid);
+    setCell(groupData);
   };
 
   function groupKey(cell) {
@@ -47,19 +47,18 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
       acc[groupKey].push(cur);
       return acc;
     }, {});
-    return groupedData
+    return groupedData;
   }
 
   const handleSelect = (event) => {
-
-    const listCellName = event.target.value
-    setCellname(cell[listCellName])
-  }
+    const listCellName = event.target.value;
+    setCellname(cell[listCellName]);
+  };
 
   const handleSelectDominant = (event) => {
-    const listDominant = event.target.value
-    setDominant(listDominant)
-  }
+    const listDominant = event.target.value;
+    setDominant(listDominant);
+  };
 
   return (
     <div>
@@ -70,6 +69,7 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
           <div>
             <input
               type="date"
+              min="2021-09-01" max="2021-09-06" 
               className="text-gray-500 rounded-md h-12 w-36 p-2 outline-0 "
               name="todate"
               onChange={(e) => {
@@ -96,55 +96,46 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
             </i>
           </div>
         </div>
-        {
-          cell
-            ? (
-              <div className="mr-5 mt-1">
-                <label className="text-white">Select Cell Name</label>
-                <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
-                  <i className="mt-3 text-l mx-4">
-                    <select onChange={handleSelect} className="outline-0">
-                      <option defaultChecked>Select Cell Name</option>
-                      <option value={undefined}>All</option>
-                      {cell &&
-                        Object.keys(cell).map((item, index) => (
-                          <option key={index} value={item}>
-                            {item}
-                          </option>
-                        ))}
-                    </select>
-                  </i>
-                </div>
-              </div>
-            )
-            : null
-        }
-        {
-          cell
-            ? (
-              <div className="mr-5 mt-1">
-                <label className="text-white">Select Dominant</label>
-                <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
-                  <i className="mt-3 text-l mx-4">
-                    <select onChange={handleSelectDominant} className="outline-0">
-                      <option defaultChecked>Select Dominant</option>
-                      <option value="Dominant_RSRP" defaultValue={undefined}>Dominant_RSRP</option>
-                      <option value="Dominant_RSRQ">Dominant_RSRQ</option>
-                    </select>
-                  </i>
-                </div>
-              </div>
-            )
-            : null
-        }
+        {cell ? (
+          <div className="mr-5 mt-1">
+            <label className="text-white">Select Cell Name</label>
+            <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
+              <i className="mt-3 text-l mx-4">
+                <select onChange={handleSelect} className="outline-0">
+                  <option defaultChecked>Select Cell Name</option>
+                  <option value={undefined}>All</option>
+                  {cell &&
+                    Object.keys(cell).map((item, index) => (
+                      <option key={index} value={item}>
+                        {item}
+                      </option>
+                    ))}
+                </select>
+              </i>
+            </div>
+          </div>
+        ) : null}
+        {cell ? (
+          <div className="mr-5 mt-1">
+            <label className="text-white">Select Dominant</label>
+            <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
+              <i className="mt-3 text-l mx-4">
+                <select onChange={handleSelectDominant} className="outline-0">
+                  <option defaultChecked>Select Dominant</option>
+                  <option value="Dominant_RSRP" defaultValue={undefined}>
+                    Dominant_RSRP
+                  </option>
+                  <option value="Dominant_RSRQ">Dominant_RSRQ</option>
+                </select>
+              </i>
+            </div>
+          </div>
+        ) : null}
 
         {/* //Submit */}
-        <div className="pb-5 mx-4 mt-1">
-          <button
-            type="submit"
-            className="mt-5 bg-green-500 h-10 w-20 rounded-md border-2 border-white"
-          >
-            Submit
+        <div className="pb-5 mx-4 mt-6">
+          <button className="btn">
+            <span className="btnspan">Submit</span>
           </button>
         </div>
       </form>

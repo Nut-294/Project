@@ -7,7 +7,11 @@ export default function page() {
   return (
     <div className="flex">
       <SideBar />
-      <div className="text-white">หน้า Home</div>
+      <img
+        src="cat.jpg" // ระบุเส้นทางรูปภาพที่ต้องการแสดง
+        alt=""
+        className="ml-96 mt-40 w-96 h-96"
+      />
     </div>
   );
 }

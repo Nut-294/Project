@@ -8,8 +8,7 @@ import {
   MdOutlineMoreHoriz,
   MdOutlineLogout,
 } from "react-icons/md";
-import {BiSolidMapPin} from "react-icons/bi"
-import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineHome,AiTwotoneEnvironment } from "react-icons/ai";
 import { FaMapMarked } from "react-icons/fa";
 import { useState } from "react";
 
@@ -48,31 +47,31 @@ function SideBar() {
             <a href="/pTE4-1" className="mt-1 flex pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <FaMapMarked className="text-3xl text-black group-hover:text-white" />
               <h3 className={`mt-3 text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
-                แผนที่
+                MapY4
               </h3>
             </a>
-            <a href="/pTE4-2" className="mt-1 flex mb-2 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="/pTE4-2" className="mt-2 flex mb-2 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <BsTable className="text-3xl text-black group-hover:text-white" />
               <h3 className={`mt-2 text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
-                ตาราง
+                Quality Prediction
               </h3>
             </a>
-            <a href="/pTE3-1" className="mt-4 flex mb-2 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+            <a href="/pTE3-1" className="mt-2 flex mb-2 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+              <AiTwotoneEnvironment className="text-3xl text-black group-hover:text-white" />
+              <h3 className={`pt-2 text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
+                Y3
+              </h3>
+            </a>
+            <a href="/pTE3-2" className="mt-2 flex mb-2 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
               <MdSettingsInputAntenna className="text-3xl text-black group-hover:text-white" />
-              <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
-                หน้าน้องปี 3.1
+              <h3 className={` pt-2 text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
+                Y3
               </h3>
             </a>
-            <a href="/pTE3-2" className="mt-4 flex mb-2 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
-              <MdSettingsInputAntenna className="text-3xl text-black group-hover:text-white" />
-              <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
-                หน้าน้องปี 3.2
-              </h3>
-            </a>
-            <a href="/pTE1" className="mt-4 flex mb-8 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
-              <BiSolidMapPin className="text-3xl text-black group-hover:text-white"/>
-              <h3 className={`text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
-                หน้าน้องปี 1
+            <a href="/pTE1" className="mt-2 flex mb-8 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+              <FaMapMarked className="text-3xl text-black group-hover:text-white"/>
+              <h3 className={`pt-3 text-base text-black group-hover:text-white font-semibold ${!open && "hidden"}`}>
+                MapY1
               </h3>
             </a>
           </div>

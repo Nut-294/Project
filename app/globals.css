@@ -46,3 +46,39 @@
 .MuiToolbar-root p{
   margin-bottom: 0;
 }
+
+/* -------------------------------------submit---------------------------------------- */
+
+.btn {
+  background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: #00a84f;
+  display: block;
+  height: 50px;
+  font-size:1.2em;
+  padding: 2px;
+  position: relative;
+  text-decoration: none;
+  width: 6em;
+  z-index: 2;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+.btn .btnspan {
+  align-items: center;
+  background: #0e0e10;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  transition: background 0.5s ease;
+  width: 100%;
+}
+
+.btn:hover .btnspan {
+  background: transparent;
+}
