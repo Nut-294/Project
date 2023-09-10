@@ -8,11 +8,11 @@ export const GET = async (request,response) => {
     const latitude = parseFloat(url.searchParams.get("latitude"));
     const longitude = parseFloat(url.searchParams.get("longitude"));
     
-    // ขอบเขตสีเหลี่ยม 50 เมตร
-    const latMin = latitude - 0.0008;
-    const latMax = latitude + 0.0008;
-    const lonMin = longitude - 0.0008;
-    const lonMax = longitude + 0.0008;
+    // ขอบเขตสีเหลี่ยม 800 เมตร
+    const latMin = latitude - 0.008;
+    const latMax = latitude + 0.008;
+    const lonMin = longitude - 0.008;
+    const lonMax = longitude + 0.008;
 
     try {
         const gridhistorical = await prisma.gridhistorical.findMany({
