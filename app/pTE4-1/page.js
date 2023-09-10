@@ -31,14 +31,16 @@ const DynamicMap = dynamic(() => import("@/components/compoTE4/Map"), {
 });
 export default function PageOne() {
   return (
-    <div className="flex">
-      <div className="fixed">
-        <SideBar/>
-      </div>
-      <div className="ml-72">
-        <DynamicMap/>
+    <div className="">
+      <div className="flex">
+        <div className="fixed ">
+          <SideBar />
+        </div>
+
+        <div className="ml-72">
+          <DynamicMap />
+        </div>
       </div>
     </div>
   );
 }
-

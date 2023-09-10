@@ -180,12 +180,9 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
         </div>
 
         {/* //Submit */}
-        <div className="pb-5 my-1">
-          <button
-            type="submit"
-            className="mt-5 bg-green-500 h-10 w-20 rounded-md border-2 border-white"
-          >
-            Submit
+        <div className="pb-5 mt-6">
+        <button className="btn">
+            <span className="btnspan">Submit</span>
           </button>
         </div>
       </form>
@@ -210,12 +207,9 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
         />
       </div>
       <form onSubmit={handleSubmitID}>
-        <div className="pb-5 my-1 flex justify-center items-center" >
-          <button
-            type="submit"
-            className="mt-5 bg-green-500 h-10 w-20 rounded-md border-2 border-white"
-          >
-            Predict
+        <div className="pb-5 mt-8 flex justify-center items-center" >
+        <button className="btn">
+            <span className="btnspan">Predict</span>
           </button>
         </div>
       </form>

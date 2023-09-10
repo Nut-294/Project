@@ -38,6 +38,8 @@ module.exports = {
         '800px': '50rem',
         '400px': '25rem',
         '352px': '22rem',
+        '128': '22rem',
+        
       },
       padding:{
         '352px': '22rem',
