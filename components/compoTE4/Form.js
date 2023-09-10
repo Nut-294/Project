@@ -66,7 +66,7 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
       {/* Calendar */}
       <form onSubmit={handleSubmit} className="flex mt-8">
         <div className="mr-5 mt-1">
-        <label className="text-white">Select Date</label>
+          <label className="text-white">Select Date</label>
           <div>
             <input
               type="date"
@@ -102,16 +102,16 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
               <div className="mr-5 mt-1">
                 <label className="text-white">Select Cell Name</label>
                 <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
-
                   <i className="mt-3 text-l mx-4">
                     <select onChange={handleSelect} className="outline-0">
-                      <option defaultChecked >Select Cell Name</option>
-                      <option value="null">All</option>
-                      {
-                      cell && Object.keys(cell).map((item, index) =>
-                        <option key={index} value={item}>{item}</option>
-                      )
-                      }
+                      <option defaultChecked>Select Cell Name</option>
+                      <option value={undefined}>All</option>
+                      {cell &&
+                        Object.keys(cell).map((item, index) => (
+                          <option key={index} value={item}>
+                            {item}
+                          </option>
+                        ))}
                     </select>
                   </i>
                 </div>
@@ -122,14 +122,13 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
         {
           cell
             ? (
-              <div  className="mr-5 mt-1">
+              <div className="mr-5 mt-1">
                 <label className="text-white">Select Dominant</label>
                 <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
-
                   <i className="mt-3 text-l mx-4">
                     <select onChange={handleSelectDominant} className="outline-0">
                       <option defaultChecked>Select Dominant</option>
-                      <option value="Dominant_RSRP" defaultValue="Dominant_RSRP">Dominant_RSRP</option>
+                      <option value="Dominant_RSRP" defaultValue={undefined}>Dominant_RSRP</option>
                       <option value="Dominant_RSRQ">Dominant_RSRQ</option>
                     </select>
                   </i>
