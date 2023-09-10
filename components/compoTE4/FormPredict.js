@@ -187,7 +187,7 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
           </button>
         </div>
       </form>
-      <div style={{ height: 500, width: 1000, borderRadius: "4px" }} className="bg-white">
+      <div style={{ height: 500, width: 1200, borderRadius: "4px" }} className="bg-white">
         <DataGrid
           rows={CellData}
           columns={columns}
