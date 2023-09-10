@@ -12,7 +12,12 @@ export default function page() {
   const [cellname, setCellname] = useState([])
   const [combinedData, setCombinedData] = useState([])
 
-  console.log("รวม", combinedData)
+  const [pageData, setPageData] = useState([])
+
+  const handleDataReady = (mergedData) => {
+    setPageData(mergedData);
+  };
+
   return (
     <div className="flex">
       <div className="fixed">
@@ -20,8 +25,8 @@ export default function page() {
       </div >
       <div className="ml-72 mb-96">
         <FormPredict setCellname={setCellname} setCombinedData={setCombinedData} />
-        <Predict combinedData={combinedData} />
-        <MapPredict/>
+        <Predict combinedData={combinedData} onDataReady={handleDataReady} />
+        {pageData.length > 0 && <MapPredict pageData={pageData} />}
       </div>
     </div>
   );
