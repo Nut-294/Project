@@ -21,7 +21,7 @@ export default function MapPredict({ pageData }) {
   const iconUrl = "Pole.png";
   const mapRef = useRef(null)
 
-  console.log(pageData)
+  console.log("รวมข้อมูลทั้งหมด",pageData)
 
   let firstItem = null; // กำหนดตัวแปร firstItem ด้านนอก
   if (pageData && pageData.length > 0) {
