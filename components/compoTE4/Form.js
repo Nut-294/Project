@@ -133,9 +133,9 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
         ) : null}
 
         {/* //Submit */}
-        <div className="pb-5 mx-4 mt-6">
-          <button className="btn">
-            <span className="btnspan">Submit</span>
+        <div className="pb-5 mt-8">
+          <button className="btnS">
+            <span className="btnSspan">Submit</span>
           </button>
         </div>
       </form>

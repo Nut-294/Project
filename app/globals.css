@@ -47,16 +47,16 @@
   margin-bottom: 0;
 }
 
-/* -------------------------------------submit---------------------------------------- */
+/* -------------------------------------Predict---------------------------------------- */
 
-.btn {
+.btnP {
   background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
   border-radius: 30px;
   box-sizing: border-box;
   color: #00a84f;
   display: block;
   height: 50px;
-  font-size:1.2em;
+  font-size:1em;
   padding: 2px;
   position: relative;
   text-decoration: none;
@@ -64,11 +64,11 @@
   z-index: 2;
 }
 
-.btn:hover {
+.btnP:hover {
   color: #fff;
 }
 
-.btn .btnspan {
+.btnP .btnPspan {
   align-items: center;
   background: #0e0e10;
   border-radius: 30px;
@@ -79,6 +79,41 @@
   width: 100%;
 }
 
-.btn:hover .btnspan {
+.btnP:hover .btnPspan {
+  background: transparent;
+}
+
+/* ---------------------------------------Submit------------------------------------------------ */
+.btnS {
+  background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: #00a84f;
+  display: block;
+  height: 30px;
+  font-size:0.8em;
+  padding: 2px;
+  position: relative;
+  text-decoration: none;
+  width: 5em;
+  z-index: 2;
+}
+
+.btnS:hover {
+  color: #fff;
+}
+
+.btnS .btnSspan {
+  align-items: center;
+  background: #0e0e10;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  transition: background 0.5s ease;
+  width: 100%;
+}
+
+.btnS:hover .btnSspan {
   background: transparent;
 }

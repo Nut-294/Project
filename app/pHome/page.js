@@ -16,7 +16,11 @@ export default function page() {
       <div className="border-2 text-3xl mb-4 p-6 rounded-md"> Antenna Catalog</div>
       <div className="border-2 text-3xl mb-4 p-6 rounded-md">Data Visualization Y1</div>
       </div>
-     
+      <img
+        src="cat.jpg" // ระบุเส้นทางรูปภาพที่ต้องการแสดง
+        alt=""
+        className="mt-44 w-96 h-96 ml-1"
+      />
     </div>
   );
 }
