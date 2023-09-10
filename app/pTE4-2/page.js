@@ -5,6 +5,7 @@ import SideBar from "@/components/compoTE4/Sidebar";
 import FormPredict from "@/components/compoTE4/FormPredict";
 import Predict from "@/components/compoTE4/Predict";
 import { useState } from "react";
+import MapPredict from "@/components/compoTE4/MapPredict";
 
 
 export default function page() {
@@ -17,9 +18,10 @@ export default function page() {
       <div className="fixed">
         <SideBar />
       </div >
-      <div className="ml-72">
+      <div className="ml-72 mb-96">
         <FormPredict setCellname={setCellname} setCombinedData={setCombinedData} />
         <Predict combinedData={combinedData} />
+        <MapPredict/>
       </div>
     </div>
   );
