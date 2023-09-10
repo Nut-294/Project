@@ -152,6 +152,8 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
               type="date"
               className="text-gray-500 rounded-md h-12 w-36 p-2 outline-0"
               name="todate"
+              min="2021-09-01"
+              max="2021-09-06"
               onChange={(e) => {
                 handleSelectdate(e);
                 setDate(e.target.value);
