@@ -39,8 +39,8 @@ export default function MapPredict({ pageData }) {
       <MapContainer
         className="mt-8"
         style={{ height: "500px", width: "1200px", zIndex: "1" }}
-        center={[13.773481, 100.561079]}
-        zoom={30}
+        center={[13, 100]}
+        zoom={8}
         scrollWheelZoom={true}
         ref={mapRef}
       >
