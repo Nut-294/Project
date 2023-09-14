@@ -107,7 +107,7 @@ function SideBar() {
             </a>
             <a
               href="/pTE1"
-              className="mt-2 flex mb-8 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto"
+              className="mt-2 flex mb-2 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto"
             >
               <FaMapMarked className="text-3xl text-black group-hover:text-white" />
               <h3
@@ -124,7 +124,7 @@ function SideBar() {
         <hr className=" border-black"></hr>
         {/* setting */}
         <div className="border-blue-900 w-full">
-          <div className="flex mt-6 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+          <div className="flex mt-2 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
             <MdOutlineSettings className="text-3xl text-black group-hover:text-white" />
             <h3
               className={`text-base text-black group-hover:text-white font-semibold ${
@@ -134,7 +134,7 @@ function SideBar() {
               Settings
             </h3>
           </div>
-          <div className="flex mb-5 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+          <div className="flex mb-1 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
             <MdOutlineMoreHoriz className="text-3xl text-black group-hover:text-white" />
             <h3
               className={`text-base text-black group-hover:text-white font-semibold ${
@@ -150,10 +150,10 @@ function SideBar() {
         <div className=" w-full">
           {data?.user ? (
             <a onClick={() => signOut({ callbackUrl: "/" })}>
-              <div className="flex mt-4 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
+              <div className="flex mt-2 pl-3 pt-2 pb-2 justify-start items-center gap-4  hover:bg-green-900 rounded-md group cursor-pointer hover:shadow-lg m-auto">
                 <MdOutlineLogout className="text-3xl text-black group-hover:text-white" />
                 <h3
-                  className={`text-base text-black group-hover:text-white font-semibold ${
+                  className={`pt-2 text-base text-black group-hover:text-white font-semibold ${
                     !open && "hidden"
                   }`}
                 >
