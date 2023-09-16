@@ -33,6 +33,24 @@ export default function PageOne() {
   return (
     <div className="">
       <div className="flex">
+        <div className="fixed flex">
+          <SideBar />
+          <div className="w-screen h-12 bg-slate-600 flex  items-center border-b-2  border-black pl-8 py-8">
+            <div className="text-2xl text-white font-medium">Data Visualization</div>
+            
+          </div>
+        </div>
+        <div className="fixed ml-72 mt-12">
+          <DynamicMap />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+{
+  /* <div className="">
+      <div className="flex">
         <div className="fixed ">
           <SideBar />
         </div>
@@ -41,6 +59,5 @@ export default function PageOne() {
           <DynamicMap />
         </div>
       </div>
-    </div>
-  );
+    </div> */
 }
