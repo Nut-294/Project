@@ -15,7 +15,7 @@ import { useState } from "react";
 
 import { useSession, signOut } from "next-auth/react";
 function SideBar() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const { data } = useSession();
 
@@ -47,7 +47,7 @@ function SideBar() {
           <div className="w-full">
             <a
               href="/pHome"
-              className="mt-1 flex pl-3 pt-2 pb-2 justify-start items-center gap-4   hover:bg-slate-500 rounded-md group cursor-pointer hover:shadow-xl m-auto"
+              className="mt-1 flex pl-3 pt-2 pb-2 justify-start items-center gap-4 hover:bg-slate-500 rounded-md group cursor-pointer hover:shadow-xl m-auto"
             >
               <AiOutlineHome className="text-3xl text-teal-400 group-hover:text-white" />
               <h3

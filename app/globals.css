@@ -50,10 +50,10 @@
 /* -------------------------------------Predict---------------------------------------- */
 
 .btnP {
-  background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+  background-image: linear-gradient(to right, #006175 0%, #4db3be 100%);
   border-radius: 30px;
   box-sizing: border-box;
-  color: #00a84f;
+  color: #77d7d7;
   display: block;
   height: 50px;
   font-size:1em;
@@ -85,10 +85,10 @@
 
 /* ---------------------------------------Submit------------------------------------------------ */
 .btnS {
-  background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+  background-image: linear-gradient(to right, #006175 0%,  #4db3be 100%);
   border-radius: 30px;
   box-sizing: border-box;
-  color: #00a84f;
+  color: #77d7d7;
   display: block;
   height: 30px;
   font-size:0.8em;

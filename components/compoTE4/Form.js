@@ -64,13 +64,13 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
     <div>
       {/* Calendar */}
       <form onSubmit={handleSubmit} className="flex mt-8">
-        <div className="mr-5 mt-1">
-          <label className="text-white">Select Date</label>
+        <div className="mr-5 mt-1 ">
+          <label className="text-black">Select Date</label>
           <div>
             <input
               type="date"
               min="2021-09-01" max="2021-09-06" 
-              className="text-gray-500 rounded-md h-12 w-36 p-2 outline-0 "
+              className="text-gray-500 rounded-md h-12 w-36 p-2 outline-0 border-2 border-slate-200"
               name="todate"
               onChange={(e) => {
                 handleSelectdate(e);
@@ -82,8 +82,8 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
 
         {/* Search */}
         <div className="mr-5 mt-1">
-          <label className="text-white">Select eNodeB Name</label>
-          <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
+          <label className="text-black">Select eNodeB Name</label>
+          <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0 border-2 border-slate-200">
             <input
               type="text"
               value={inputValue}
@@ -98,8 +98,8 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
         </div>
         {cell ? (
           <div className="mr-5 mt-1">
-            <label className="text-white">Select Cell Name</label>
-            <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
+            <label className="text-black">Select Cell Name</label>
+            <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0 border-2 border-slate-200">
               <i className="mt-3 text-l mx-4">
                 <select onChange={handleSelect} className="outline-0" defaultValue="default">
                   <option disabled value="default">Select Cell Name</option>
@@ -117,8 +117,8 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
         ) : null}
         {cell ? (
           <div className="mr-5 mt-1">
-            <label className="text-white">Select Dominant</label>
-            <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
+            <label className="text-black">Select Dominant</label>
+            <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0 border-2 border-slate-200">
               <i className="mt-3 text-l mx-4">
                 <select onChange={handleSelectDominant} className="outline-0" defaultValue="default">
                   <option disabled value="default">Select Dominant</option>
