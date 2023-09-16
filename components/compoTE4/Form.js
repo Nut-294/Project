@@ -101,8 +101,8 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
             <label className="text-white">Select Cell Name</label>
             <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
               <i className="mt-3 text-l mx-4">
-                <select onChange={handleSelect} className="outline-0">
-                  <option defaultChecked>Select Cell Name</option>
+                <select onChange={handleSelect} className="outline-0" defaultValue="default">
+                  <option disabled value="default">Select Cell Name</option>
                   <option value={undefined}>All</option>
                   {cell &&
                     Object.keys(cell).map((item, index) => (
@@ -120,8 +120,8 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
             <label className="text-white">Select Dominant</label>
             <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
               <i className="mt-3 text-l mx-4">
-                <select onChange={handleSelectDominant} className="outline-0">
-                  <option defaultChecked>Select Dominant</option>
+                <select onChange={handleSelectDominant} className="outline-0" defaultValue="default">
+                  <option disabled value="default">Select Dominant</option>
                   <option value="Dominant_RSRP" defaultValue={undefined}>
                     Dominant_RSRP
                   </option>

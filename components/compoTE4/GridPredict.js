@@ -2,7 +2,7 @@ import React from 'react';
 import "leaflet/dist/leaflet.css";
 import { Popup, Rectangle } from "react-leaflet";
 
-export default function GridPredict({pageData}) {
+export default function GridPredict({groupedData}) {
   const radius = 50;
 
   const colors = [
@@ -41,12 +41,12 @@ export default function GridPredict({pageData}) {
     return Math.floor((rsrp + 121) / 2);
   };
 
-  if (pageData && pageData.length > 0) {
-    const firstItem = pageData[0]; // เลือกข้อมูลจากตัวแรกใน Array
+  if (groupedData && Object.keys(groupedData).length > 0) {
+    const cellName = Object.keys(groupedData)[0]; // ใช้ cellName แรกใน groupedData
 
     return (
       <div>
-        {firstItem.map((item, index) => (
+        {groupedData[cellName].map((item, index) => (
           <Rectangle
             key={index}
             bounds={L.latLng([item.Latitude, item.Longitude]).toBounds(radius)}
@@ -68,8 +68,5 @@ export default function GridPredict({pageData}) {
     return null; // หรือสามารถใส่ HTML สำหรับแสดงข้อความว่าไม่มีข้อมูล
   }
 }
-
-
-
 
 
