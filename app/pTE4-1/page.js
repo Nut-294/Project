@@ -6,10 +6,10 @@ import dynamic from "next/dynamic";
 const DynamicMap = dynamic(() => import("@/components/compoTE4/Map"), {
   loading: () => (
     <div role="status">
-      <div className="border-4 border-green-800 h-[500px] w-[900px] bg-green-700 py-52 px-[352px] mt-36">
+      <div className="border-4 bg-slate-300 border-slate-100 h-[500px] w-[900px]  py-52 px-[352px] mt-36">
         <svg
           aria-hidden="true"
-          className=" w-40 h-20 text-gray-200 animate-spin dark:text-gray-800 fill-green-900"
+          className=" w-40 h-20 text-gray-200 animate-spin dark:text-gray-800 fill-teal-400"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -33,6 +33,24 @@ export default function PageOne() {
   return (
     <div className="">
       <div className="flex">
+        <div className="fixed flex">
+          <SideBar />
+          <div className="w-screen h-12 bg-slate-600 flex  items-center border-b-2  border-black pl-8 py-8">
+            <div className="text-2xl text-white font-medium">Data Visualization</div>
+            
+          </div>
+        </div>
+        <div className="fixed ml-72 mt-12">
+          <DynamicMap />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+{
+  /* <div className="">
+      <div className="flex">
         <div className="fixed ">
           <SideBar />
         </div>
@@ -41,6 +59,5 @@ export default function PageOne() {
           <DynamicMap />
         </div>
       </div>
-    </div>
-  );
+    </div> */
 }

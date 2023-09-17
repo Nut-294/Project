@@ -119,7 +119,7 @@ export default function MapPredict({ pageData }) {
         style={{ height: "500px", width: "1200px", zIndex: "1" }}
         center={[13, 100]}
         zoom={8}
-        scrollWheelZoom={true}
+        scrollWheelZoom={false}
         ref={mapRef}
       >
         <TileLayer
