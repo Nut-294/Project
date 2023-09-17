@@ -43,7 +43,8 @@ export default function GridPredictSelect({groupData}) {
 
   return (
     <div>
-      {groupData.map((item, groupIndex) => (
+      {
+      groupData && groupData.map((item, groupIndex) => (
         <div key={groupIndex}>
             <Rectangle
               bounds={L.latLng([item.Latitude, item.Longitude]).toBounds(radius)}
@@ -54,8 +55,7 @@ export default function GridPredictSelect({groupData}) {
               }}
             >
               <Popup>
-                <h2>ReceivedSignal: {item.ReceivedSignal} </h2>
-                <h2>id: {item.id} </h2>
+                <h2>ReceivedSignal: {item.ReceivedSignal.toFixed(2)} </h2>
               </Popup>
             </Rectangle>
           )

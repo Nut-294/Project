@@ -57,8 +57,7 @@ export default function GridPredict({groupedData}) {
             }}
           >
             <Popup>
-              <h2>ReceivedSignal: {item.ReceivedSignal} </h2>
-              <h2>id: {item.id} </h2>
+              <h2>ReceivedSignal: {item.ReceivedSignal.toFixed(2)} </h2>
             </Popup>
           </Rectangle>
         ))}

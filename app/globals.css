@@ -117,3 +117,25 @@
 .btnS:hover .btnSspan {
   background: transparent;
 }
+
+/* เพิ่ม */
+.ant-select-selector {
+  height: 50px; 
+  border-radius: 10px;
+}
+
+.ant-select-arrow {
+  top: 27px; 
+}
+
+.mr-5 .ant-select-arrow {
+  top: 27px; 
+}
+
+
+  
+  
+  
+  
+  
+  
