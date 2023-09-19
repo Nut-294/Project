@@ -42,7 +42,7 @@
   top: 0; /* Don't forget this, required for the stickiness */
 }
 
-
+/* --------------------------------------Table----------------------------------------- */
 .MuiToolbar-root p{
   margin-bottom: 0;
 }
@@ -93,7 +93,7 @@
   height: 30px;
   font-size:0.8em;
   padding: 2px;
-  position: relative;
+  /* position: relative; */
   text-decoration: none;
   width: 5em;
   z-index: 2;

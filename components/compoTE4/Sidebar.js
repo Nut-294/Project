@@ -20,11 +20,11 @@ function SideBar() {
   const { data } = useSession();
 
   return (
-    <div className="flex bg-slate-600  h-screen border-2 border-black">
+    <div className="flex border-2 border-black">
       <div
-        className={`p-5 pt-4 ${
+        className={`p-5 pt-4 h-screen bg-slate-600 ${
           open ? "w-64" : "w-24 "
-        } duration-300 relative`}
+        } duration-300 `}
       >
         {/* <TfiArrowCircleLeft
           className={`text-4xl text-white bg-gray-900 rounded-full absolute -right-3 top-9 border border-0 border-green-100 cursor-pointer ${
@@ -120,7 +120,7 @@ function SideBar() {
                   !open && "hidden"
                 }`}
               >
-                Data Visualization Y4
+                Data Visualization Year 1
               </h3>
             </a>
           </div>
