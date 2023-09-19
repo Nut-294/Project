@@ -141,10 +141,10 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
 
 
   return (
-    <div>
+    <div className="">
       {/* ---------------------------------Form--------------------------------------- */}
       {/* Calendar */}
-      <form onSubmit={handleSubmit} className="flex mt-8 my-8">
+      <form onSubmit={handleSubmit} className="flex mt-8 my-8 z-20 ">
         <div className="mr-5 mt-1">
           <label className="text-white">Select Date</label>
           <div>
@@ -186,6 +186,8 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
           </button>
         </div>
       </form>
+
+      {/* Table */}
       <div style={{ height: 500, width: 1200, borderRadius: "4px" }} className="bg-white">
         <DataGrid
           rows={CellData}
@@ -206,6 +208,8 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
           onPageChange={handlePageChange}
         />
       </div>
+
+      {/* Predict */}
       <form onSubmit={handleSubmitID}>
         <div className="pb-5 mt-8 flex justify-center items-center" >
         <button className="btnP">

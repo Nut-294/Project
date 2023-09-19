@@ -3,6 +3,7 @@
 import React from "react";
 import SideBar from "@/components/compoTE4/Sidebar";
 import dynamic from "next/dynamic";
+import Bar from "@/components/compoTE4/bar/Bar";
 const DynamicMap = dynamic(() => import("@/components/compoTE4/Map"), {
   loading: () => (
     <div role="status">
@@ -33,14 +34,11 @@ export default function PageOne() {
   return (
     <div className="">
       <div className="flex">
-        <div className="fixed flex">
-          <SideBar />
-          <div className="w-screen h-12 bg-slate-600 flex  items-center border-b-2  border-black pl-8 py-8">
-            <div className="text-2xl text-white font-medium">Data Visualization</div>
-            
-          </div>
+        <div className="flex">
+          <SideBar/>
+         <Bar/>
         </div>
-        <div className="fixed ml-72 mt-12">
+        <div className=" ml-72 mt-12">
           <DynamicMap />
         </div>
       </div>

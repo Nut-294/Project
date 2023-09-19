@@ -44,6 +44,9 @@ module.exports = {
       padding:{
         '352px': '22rem',
       },
+      height: {
+        '72px': '4.5rem',
+      }
     },
   },
   plugins: [],

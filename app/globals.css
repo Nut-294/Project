@@ -1,11 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @layer base{
+@layer base{
 	body{
 		@apply bg-gray-800;
 	}
-} */
+}
 
 .content-table {
   position: fixed;
@@ -16,7 +16,7 @@
   background-color: white;
   transition: transform 0.3s ease-in-out;
   transform: translateY(100%);
-  z-index: 999;
+  /* z-index: 999; */
   overflow: scroll;
   
 }

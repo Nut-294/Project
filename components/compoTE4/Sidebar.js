@@ -20,7 +20,7 @@ function SideBar() {
   const { data } = useSession();
 
   return (
-    <div className="flex border-2 border-black">
+    <div className="flex border-2 border-black fixed top-16">
       <div
         className={`p-5 pt-4 h-screen bg-slate-600 ${
           open ? "w-64" : "w-24 "
