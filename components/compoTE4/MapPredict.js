@@ -16,10 +16,16 @@ import L from "leaflet";
 
 import GridPredict from "./GridPredict";
 import GridPredictSelect from "./GridPredictSelect";
+import GridPredictMulti from "./GridPredictMulti";
+
+import { Select } from 'antd';
+const { Option } = Select;
 
 
 export default function MapPredict({ pageData }) {
   const [groupData, setGroupData] = useState([])
+  const [selectedGroupData, setSelectedGroupData] = useState({});
+
   const iconUrl = "Pole.png";
   const mapRef = useRef(null)
 
@@ -47,32 +53,63 @@ export default function MapPredict({ pageData }) {
     const selectedCellName = event.target.value;
     const selectedData = groupedData[selectedCellName]; // เลือกข้อมูลของ cell ที่ถูกเลือก
     setGroupData(selectedData)
-    // ทำสิ่งที่คุณต้องการกับข้อมูลที่ถูกเลือก
 
   };
-  console.log("Selected Cell Data:", groupData); //ข้อมูลที่มากกว่า 1 ตัวเอามา Group
-  console.log("ข้อมูลที่ถูกจัดกลุ่ม", groupedData); //ข้อมูลท 1 ตัวเอามา Group
 
+  //กรองข้อมูลที่ถูกจัดกลุ่มโดยเลือกเฉพาะข้อมูลที่มี cellName ตรงกับที่เลือกไว้
+  const handleMultiSelect = (selectedCellNames) => {
+    const newSelectedGroupData = Object.fromEntries(
+      Object.entries(groupedData)
+        .filter(([cellName]) => selectedCellNames.includes(cellName))
+    );
+    setSelectedGroupData(newSelectedGroupData);
+  };
 
-
+  console.log("ข้อมูลที่กดเลือก Select 1 ตัว:", groupData); //ข้อมูลที่มากกว่า 1 ตัวเอามา Group
+  console.log("ข้อมูลที่ถูกจัดกลุ่ม:", groupedData); //ข้อมูล 1 ตัวเอามา Group
+  console.log("ข้อมูลที่กดเลือกหลายตัว:", selectedGroupData);
 
   return (
     <div className="text-white">
       {
         pageData.length > 1 && Object.keys(groupedData).length > 0 ? (
-          <div className="mr-5 mt-1">
-            <label className="text-white">Select Cell Name</label>
-            <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
-              <i className="mt-3 text-l mx-4">
-                <select className="outline-0" onChange={handleSelect} defaultValue="default">
-                  <option disabled value="default">Select Cell Name</option>
-                  {Object.keys(groupedData).map((cellName) => (
-                    <option key={cellName} value={cellName}>
-                      {cellName}
-                    </option>
-                  ))}
-                </select>
-              </i>
+          <div className="mr-5 mt-1 flex">
+            <div>
+
+              <label className="text-white">Select Cell Name</label>
+              <div className="flex mr-5 text-black bg-white h-12 w-48 rounded-md outline-0 ">
+                <i className="mt-3 text-l mx-4">
+                  <select className="outline-0" onChange={handleSelect} defaultValue="default">
+                    <option disabled value="default">Select Cell Name</option>
+                    {Object.keys(groupedData).map((cellName) => (
+                      <option key={cellName} value={cellName}>
+                        {cellName}
+                      </option>
+                    ))}
+                    <option value="">Clear Cell Name</option>
+                  </select>
+                </i>
+              </div>
+            </div>
+
+            <div className="text-white mt-0">
+              <label className="text-white">Select Cell Name</label>
+              <div>
+                <i >
+                  <Select
+                    mode="multiple"
+                    placeholder="Cell Names"
+                    onChange={handleMultiSelect}
+                    style={{ width: '100%', fontSize: '17px' }}
+                  >
+                    {Object.keys(groupedData).map((cellName) => (
+                      <Option key={cellName} value={cellName}>
+                        {cellName}
+                      </Option>
+                    ))}
+                  </Select>
+                </i>
+              </div>
             </div>
           </div>
         ) : null
@@ -117,6 +154,15 @@ export default function MapPredict({ pageData }) {
             ? (
               <div>
                 <GridPredictSelect groupData={groupData} />
+              </div>
+            )
+            : null
+        }
+        {
+          Object.keys(selectedGroupData).length > 1
+            ? (
+              <div>
+                <GridPredictMulti selectedGroupData={selectedGroupData} />
               </div>
             )
             : null
