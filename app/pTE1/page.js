@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
 import SideBar from "@/components/compoTE4/Sidebar";
 import Search from "@/components/compoTE1/search_enodeB";
+import Data from "@/components/compoTE4/bar/Data";
 
 const MapContent = dynamic(() => import("@/components/compoTE1/MapContent"), {
   ssr: false,
@@ -14,10 +15,11 @@ const MapContent = dynamic(() => import("@/components/compoTE1/MapContent"), {
 export default function Home() {
   return (
     <div className="flex">
-      <div className="fixed">
+      <div className="">
       <SideBar />
+      <Data/>
       </div>
-      <div className="relative mt-12 ml-72 ">
+      <div className="relative mt-24 ml-72 ">
         <div className="flex space-x-4 items-center justify-center h-20">
           <input
             type="date"

@@ -3,7 +3,7 @@
 import React from "react";
 import SideBar from "@/components/compoTE4/Sidebar";
 import dynamic from "next/dynamic";
-import Bar from "@/components/compoTE4/bar/Bar";
+import Data from "@/components/compoTE4/bar/Data";
 const DynamicMap = dynamic(() => import("@/components/compoTE4/Map"), {
   loading: () => (
     <div role="status">
@@ -36,9 +36,9 @@ export default function PageOne() {
       <div className="flex">
         <div className="flex">
           <SideBar/>
-         <Bar/>
+         <Data/>
         </div>
-        <div className=" ml-72 mt-12">
+        <div className=" ml-72 mt-16 mb-20">
           <DynamicMap />
         </div>
       </div>

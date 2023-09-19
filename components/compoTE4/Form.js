@@ -65,7 +65,7 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
       {/* Calendar */}
       <form onSubmit={handleSubmit} className="flex mt-8">
         <div className="mr-5 mt-1 ">
-          <label className="text-black">Select Date</label>
+          <label className="text-white">Select Date</label>
           <div>
             <input
               type="date"
@@ -82,8 +82,8 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
 
         {/* Search */}
         <div className="mr-5 mt-1">
-          <label className="text-black">Select eNodeB Name</label>
-          <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0 border-2 border-slate-200">
+          <label className="text-white">Select eNodeB Name</label>
+          <div className="flex text-white bg-white h-12 w-48 rounded-md outline-0 border-2 border-slate-200">
             <input
               type="text"
               value={inputValue}
@@ -98,8 +98,8 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
         </div>
         {cell ? (
           <div className="mr-5 mt-1">
-            <label className="text-black">Select Cell Name</label>
-            <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0 border-2 border-slate-200">
+            <label className="text-white">Select Cell Name</label>
+            <div className="flex text-white bg-white h-12 w-48 rounded-md outline-0 border-2 border-slate-200">
               <i className="mt-3 text-l mx-4">
                 <select onChange={handleSelect} className="outline-0" defaultValue="default">
                   <option disabled value="default">Select Cell Name</option>
@@ -117,8 +117,8 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
         ) : null}
         {cell ? (
           <div className="mr-5 mt-1">
-            <label className="text-black">Select Dominant</label>
-            <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0 border-2 border-slate-200">
+            <label className="text-white">Select Dominant</label>
+            <div className="flex text-white bg-white h-12 w-48 rounded-md outline-0 border-2 border-slate-200">
               <i className="mt-3 text-l mx-4">
                 <select onChange={handleSelectDominant} className="outline-0" defaultValue="default">
                   <option disabled value="default">Select Dominant</option>
