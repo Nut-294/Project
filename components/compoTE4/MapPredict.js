@@ -77,7 +77,7 @@ export default function MapPredict({ pageData }) {
             <div>
 
               <label className="text-white">Select Cell Name</label>
-              <div className="flex mr-5 text-white bg-white h-12 w-48 rounded-md outline-0 ">
+              <div className="flex mr-5 text-black bg-white h-12 w-48 rounded-md outline-0 ">
                 <i className="mt-3 text-l mx-4">
                   <select className="outline-0" onChange={handleSelect} defaultValue="default">
                     <option disabled value="default">Select Cell Name</option>

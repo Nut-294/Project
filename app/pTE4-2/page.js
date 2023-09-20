@@ -21,11 +21,11 @@ export default function page() {
   return (
     <div>
       <div className="flex">
-        <div className="flex bg-green-100">
+        <div className="flex bg-green-100 z-40">
           <SideBar />
           <Signal />
         </div>
-        <div className=" ml-72 mt-16">
+        <div className=" ml-32 mt-16 mb-20">
           <FormPredict
             setCellname={setCellname}
             setCombinedData={setCombinedData}

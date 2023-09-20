@@ -34,11 +34,11 @@ export default function PageOne() {
   return (
     <div className="">
       <div className="flex">
-        <div className="flex">
+        <div className="flex z-40">
           <SideBar/>
          <Data/>
         </div>
-        <div className=" ml-72 mt-16 mb-20">
+        <div className=" ml-28 mt-16 ">
           <DynamicMap />
         </div>
       </div>

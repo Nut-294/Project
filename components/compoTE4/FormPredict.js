@@ -165,7 +165,7 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
         {/* Search */}
         <div className="mr-5 mt-1">
           <label className="text-white">Select eNodeB Name</label>
-          <div className="flex text-white bg-white h-12 w-48 rounded-md outline-0">
+          <div className="flex text-black bg-white h-12 w-48 rounded-md outline-0">
             <input
               type="text"
               value={inputValue}
