@@ -63,7 +63,7 @@ const Form = ({ setData, flyto, setGrid, setCellname, setDominant }) => {
   return (
     <div>
       {/* Calendar */}
-      <form onSubmit={handleSubmit} className="flex mt-8 ml-20">
+      <form onSubmit={handleSubmit} className="rounded-md px-52 p-2 flex mt-8 ml-20 shadow-inner  shadow-white border-white border-2 bg-gray-700">
         <div className="mr-5 mt-1 ">
           <label className="text-white">Select Date</label>
           <div>

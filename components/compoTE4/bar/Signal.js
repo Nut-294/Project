@@ -5,7 +5,7 @@ export default function Signal() {
     <div className="fixed z-40">
       <div className="w-screen h-20 bg-slate-600 flex  items-center border-2  border-black pl-8 py-8">
         <div className="text-4xl text-white font-medium">
-          Signal
+        Received Signal Strength Prediction
         </div>
       </div>
     </div>

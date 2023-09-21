@@ -25,7 +25,7 @@ export default function page() {
           <SideBar />
           <Signal />
         </div>
-        <div className=" ml-32 mt-16 mb-20">
+        <div className=" ml-8 mt-16 mb-20">
           <FormPredict
             setCellname={setCellname}
             setCombinedData={setCombinedData}

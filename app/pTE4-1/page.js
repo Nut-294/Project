@@ -7,7 +7,7 @@ import Data from "@/components/compoTE4/bar/Data";
 const DynamicMap = dynamic(() => import("@/components/compoTE4/Map"), {
   loading: () => (
     <div role="status">
-      <div className="border-4 bg-slate-300 border-slate-100 h-[500px] w-[900px]  py-52 px-[352px] mt-36">
+      <div className="ml-52 mt-2 border-4 bg-slate-300 border-slate-100 h-[500px] w-[900px]  py-52 px-[352px] mt-36">
         <svg
           aria-hidden="true"
           className=" w-40 h-20 text-gray-200 animate-spin dark:text-gray-800 fill-teal-400"
@@ -38,7 +38,7 @@ export default function PageOne() {
           <SideBar/>
          <Data/>
         </div>
-        <div className=" ml-28 mt-16 ">
+        <div className="ml-8 mt-16 ">
           <DynamicMap />
         </div>
       </div>

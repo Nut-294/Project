@@ -18,6 +18,7 @@ import Grid from "./Grid";
 import Cellname from "./Cellname";
 import GridRSRQ from "./GridRSRQ";
 import CellnameRSRQ from "./CellnameRSRQ";
+import LayerMap from "./LayerMap";
 
 export default function Map() {
   const iconUrl = "Pole.png";
@@ -61,14 +62,14 @@ export default function Map() {
           setDominant={setDominant}
         />
       </div>
-      <div className="flex ml-20">
+      <div className="flex mb-24 ml-20 mt-4 p-2 shadow-inner shadow-white border-white border-2 rounded-md bg-gray-700">
         <MapContainer
-        className="mt-8"
+        className="mt-4 ml-32 mb-4"
           ref={mapRef}
           style={{ height: "500px", width: "910px", zIndex: "1" }}
           center={[13.773481, 100.561079]}
           zoom={30}
-          scrollWheelZoom={true}
+          scrollWheelZoom={false}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -105,15 +106,16 @@ export default function Map() {
               <CellnameRSRQ grid={grid} cellname={cellname} />
             </div>
           ) : null}
+          <LayerMap/>
         </MapContainer>
 
         {/* แถบสี */}
-        <div className="mt-8">
-          <div className="text-white  w-24 h-10 p-2 rounded-md border-2 border-white ml-36">
+        <div className="mt-16 ml-16 mr-44">
+          <div className="mt-2 mb-2 text-white w-24 h-10 p-2 rounded-md border-2 border-white m">
             -120 dBm
           </div>
-          <div className=" mt-48 rotate-90 bg-gradient-to-r from-red-500 via-yellow-300 to-green-500 h-10 w-[400px] " />
-          <div className="text-white  mt-48  w-24 h-10 p-2 rounded-md border-2 border-white ml-36">
+          <div className="ml-6 mb-2 bg-gradient-to-b from-red-500 via-yellow-300 to-green-500 h-72 w-10 " />
+          <div className=" text-white  w-24 h-10 p-2 rounded-md border-2 border-white ">
             -70 dBm
           </div>
         </div>
