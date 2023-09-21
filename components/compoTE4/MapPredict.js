@@ -118,8 +118,8 @@ export default function MapPredict({ pageData }) {
 
       <div className="ml-20 mt-4 shadow-inner shadow-white border-white border-2 rounded-md bg-gray-700">
         <MapContainer
-          className="m-8 ml-20"
-          style={{ height: "500px", width: "1200px", zIndex: "1" }}
+          className="ml-16 m-8"
+          style={{ height: "500px", width: "1250px", zIndex: "1" }}
           center={[13, 100]}
           zoom={8}
           scrollWheelZoom={false}
