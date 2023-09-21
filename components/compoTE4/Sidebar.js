@@ -157,32 +157,7 @@ function SideBar() {
           </h3>
         </a>
         </div>
-        {/* setting */}
-
-        {/* <div className="border-blue-900 w-full">
-          <div className="flex mt-2 pl-3 pt-2 pb-2 justify-start items-center gap-4 hover:bg-slate-500 rounded-md group cursor-pointer hover:shadow-xl m-auto">
-            <MdOutlineSettings className="text-3xl text-teal-400 group-hover:text-white" />
-            <h3
-              className={`text-base text-teal-400 group-hover:text-white font-semibold ${
-                !open && "hidden"
-              }`}
-            >
-              Settings
-            </h3>
-          </div> */}
-
-        {/* More */}
-        {/* <div className="flex mb-1 pl-3 pt-2 pb-2 justify-start items-center gap-4 hover:bg-slate-500 rounded-md group cursor-pointer hover:shadow-xl m-auto">
-            <MdOutlineMoreHoriz className="text-3xl text-teal-400 group-hover:text-white" />
-            <h3
-              className={`text-base text-teal-400 group-hover:text-white font-semibold ${
-                !open && "hidden"
-              }`}
-            >
-              More
-            </h3>
-          </div>
-        </div> */}
+      
 
         {/* Logout */}
         <div className=" w-full">
@@ -201,10 +176,10 @@ function SideBar() {
             </a>
           ) : (
             <a href="/">
-              <div className="flex mt-4 pl-3 pt-2 pb-2 justify-start items-center gap-4 hover:bg-slate-500 rounded-md group cursor-pointer hover:shadow-xl m-auto">
-                <MdOutlineLogout className="text-3xl text-black group-hover:text-white" />
+              <div className="flex mt-1 pl-4 pt-2 pb-2 justify-start items-center gap-4 hover:bg-slate-500 rounded-md group cursor-pointer hover:shadow-xl m-auto">
+                <MdOutlineLogout className="text-3xl text-teal-400 group-hover:text-white" />
                 <h3
-                  className={`text-base text-black group-hover:text-white font-semibold ${
+                  className={`pt-2 text-base text-teal-400 group-hover:text-white font-semibold ${
                     !open && "hidden"
                   }`}
                 >

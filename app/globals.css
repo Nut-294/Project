@@ -19,6 +19,7 @@
   /* z-index: 999; */
   overflow: scroll;
   
+  
 }
 
 .content-table.visible {
@@ -34,6 +35,7 @@
 }
 .float-button{
   z-index: 1000;
+  background-color: rgb(10, 200, 200);
 }
 
 .th {

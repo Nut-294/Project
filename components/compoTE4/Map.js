@@ -62,7 +62,7 @@ export default function Map() {
           setDominant={setDominant}
         />
       </div>
-      <div className="flex mb-24 ml-20 mt-4 p-2 shadow-inner shadow-white border-white border-2 rounded-md bg-gray-700">
+      <div className="z-20 flex mb-24 ml-20 mt-4 p-2 shadow-inner shadow-white border-white border-2 rounded-md bg-gray-700">
         <MapContainer
         className="mt-4 ml-32 mb-4"
           ref={mapRef}
@@ -125,11 +125,11 @@ export default function Map() {
       </div>
 
       <div
-        className={`content-table ${showTable ? "visible" : ""} ${
+        className={`content-table z-20 ${showTable ? "visible" : ""} ${
           slideAnimation ? "slide-up" : ""
         }`}
       >
-        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
           <thead className="th text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
             <tr>
               <th scope="col" className="px-6 py-3">
