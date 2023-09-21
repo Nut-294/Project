@@ -13,10 +13,10 @@ export default function page() {
       </div>
       <div className="ml-40 text-white font-semibold mt-28 w-5/6">
         <h1 className="font-bold text-5xl">Getting Started</h1>
-      <div className="border-2 border-slate-400 text-3xl mb-4 p-6 rounded-md"> Data Visualization Y4</div>
-      <div className="border-2 border-slate-400 text-3xl mb-4 p-6 rounded-md"> Quality Prediction</div>
+      <div className="border-2 border-slate-400 text-3xl mb-4 p-6 rounded-md"> Data Visualization</div>
+      <div className="border-2 border-slate-400 text-3xl mb-4 p-6 rounded-md"> Received Signal Strength Prediction</div>
       <div className="border-2 border-slate-400 text-3xl mb-4 p-6 rounded-md"> Antenna Catalog</div>
-      <div className="border-2 border-slate-400 text-3xl mb-4 p-6 rounded-md">Data Visualization Y1</div>
+      <div className="border-2 border-slate-400 text-3xl mb-4 p-6 rounded-md">Data Visualization Year 1</div>
       </div>
       {/* <img
         src="cat.jpg" // ระบุเส้นทางรูปภาพที่ต้องการแสดง
