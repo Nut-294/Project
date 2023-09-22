@@ -44,6 +44,8 @@ export default function page() {
   const handleDataReady = (mergedData) => {
     setPageData(mergedData);
   };
+
+  console.log("ข้อมูล Cellname",cellname)
   return (
     <div>
       <div className="flex">
