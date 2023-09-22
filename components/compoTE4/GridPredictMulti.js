@@ -42,21 +42,25 @@ export default function GridPredictMulti({selectedGroupData}) {
   };
   
   const compareReceivedSignalByCoordinates = () => {
-    const comparisonResults = [];
+    //เก็บผลที่เปรียบเทียบ
+    const comparisonResults = []
   
-    // จัดระเบียบข้อมูลตามพิกัด
-    const coordinateData = {};
+    // ไว้เก็บข้อมูลตามพิกัด
+    const coordinateData = {}
+   //วนลูปข้อมูล
     Object.keys(selectedGroupData).forEach(cellName => {
       selectedGroupData[cellName].forEach(item => {
-        const { Latitude, Longitude, ReceivedSignal } = item;
-        const coordinateKey = `${Latitude},${Longitude}`;
+        const { Latitude, Longitude, ReceivedSignal } = item //ดึงข้อมูล Latitude, Longitude, และ ReceivedSignal จาก item
+        const coordinateKey = `${Latitude},${Longitude}`// สร้าง coordinateKey จาก Latitude และ Longitude เพื่อใช้เป็น key ใน coordinateData
   
+        // ถ้ายังไม่มีข้อมูลสำหรับพิกัด
         if (!coordinateData[coordinateKey]) {
           coordinateData[coordinateKey] = {
             Latitude,
             Longitude,
             maxReceivedSignal: parseFloat(ReceivedSignal),
           };
+        // อัปเดตค่า maxReceivedSignal ถ้าพบสัญญาณที่ได้รับใหม่ที่สูงกว่า
         } else {
           coordinateData[coordinateKey].maxReceivedSignal = Math.max(
             coordinateData[coordinateKey].maxReceivedSignal,
@@ -71,7 +75,7 @@ export default function GridPredictMulti({selectedGroupData}) {
       comparisonResults.push({
         Latitude,
         Longitude,
-        ReceivedSignal: parseFloat(maxReceivedSignal.toFixed(2)) // Ensure ReceivedSignal is a float
+        ReceivedSignal: parseFloat(maxReceivedSignal.toFixed(2))
       });
     });
   

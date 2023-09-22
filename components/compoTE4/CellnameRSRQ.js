@@ -8,33 +8,33 @@ export default function CellnameRSRQ({ grid, cellname }) {
 
     if(!cellname) return null
 
-    const filteredCellname0 = cellname.filter(item => item.Dominant_RSRQ <= -121)
-    const filteredCellname1 = cellname.filter(item => item.Dominant_RSRQ >= -120 && item.Dominant_RSRQ < -118);
-    const filteredCellname2 = cellname.filter(item => item.Dominant_RSRQ >= -118 && item.Dominant_RSRQ < -116);
-    const filteredCellname3 = cellname.filter(item => item.Dominant_RSRQ >= -116 && item.Dominant_RSRQ < -114);
-    const filteredCellname4 = cellname.filter(item => item.Dominant_RSRQ >= -114 && item.Dominant_RSRQ < -112);
-    const filteredCellname5 = cellname.filter(item => item.Dominant_RSRQ >= -112 && item.Dominant_RSRQ < -110);
-    const filteredCellname6 = cellname.filter(item => item.Dominant_RSRQ >= -110 && item.Dominant_RSRQ < -108);
-    const filteredCellname7 = cellname.filter(item => item.Dominant_RSRQ >= -108 && item.Dominant_RSRQ < -106);
-    const filteredCellname8 = cellname.filter(item => item.Dominant_RSRQ >= -106 && item.Dominant_RSRQ < -104);
-    const filteredCellname9 = cellname.filter(item => item.Dominant_RSRQ >= -104 && item.Dominant_RSRQ < -102);
-    const filteredCellname10 = cellname.filter(item => item.Dominant_RSRQ >= -102 && item.Dominant_RSRQ < -100);
-    const filteredCellname11 = cellname.filter(item => item.Dominant_RSRQ >= -100 && item.Dominant_RSRQ < -98);
-    const filteredCellname12 = cellname.filter(item => item.Dominant_RSRQ >= -98 && item.Dominant_RSRQ < -96);
-    const filteredCellname13 = cellname.filter(item => item.Dominant_RSRQ >= -96 && item.Dominant_RSRQ < -94);
-    const filteredCellname14 = cellname.filter(item => item.Dominant_RSRQ >= -94 && item.Dominant_RSRQ < -92);
-    const filteredCellname15 = cellname.filter(item => item.Dominant_RSRQ >= -92 && item.Dominant_RSRQ < -90);
-    const filteredCellname16 = cellname.filter(item => item.Dominant_RSRQ >= -90 && item.Dominant_RSRQ < -88);
-    const filteredCellname17 = cellname.filter(item => item.Dominant_RSRQ >= -88 && item.Dominant_RSRQ < -86);
-    const filteredCellname18 = cellname.filter(item => item.Dominant_RSRQ >= -86 && item.Dominant_RSRQ < -84);
-    const filteredCellname19 = cellname.filter(item => item.Dominant_RSRQ >= -84 && item.Dominant_RSRQ < -82);
-    const filteredCellname20 = cellname.filter(item => item.Dominant_RSRQ >= -82 && item.Dominant_RSRQ < -80);
-    const filteredCellname21 = cellname.filter(item => item.Dominant_RSRQ >= -80 && item.Dominant_RSRQ < -78);
-    const filteredCellname22 = cellname.filter(item => item.Dominant_RSRQ >= -78 && item.Dominant_RSRQ < -76);
-    const filteredCellname23 = cellname.filter(item => item.Dominant_RSRQ >= -76 && item.Dominant_RSRQ < -74);
-    const filteredCellname24 = cellname.filter(item => item.Dominant_RSRQ >= -74 && item.Dominant_RSRQ < -72);
-    const filteredCellname25 = cellname.filter(item => item.Dominant_RSRQ >= -72 && item.Dominant_RSRQ < -70);
-    const filteredCellname26 = cellname.filter(item => item.Dominant_RSRQ >= -70);
+    const filteredCellname0 = cellname.filter(item => item.Dominant_RSRQ <= -51)
+    const filteredCellname1 = cellname.filter(item => item.Dominant_RSRQ >= -50 && item.Dominant_RSRQ < -48);
+    const filteredCellname2 = cellname.filter(item => item.Dominant_RSRQ >= -48 && item.Dominant_RSRQ < -46);
+    const filteredCellname3 = cellname.filter(item => item.Dominant_RSRQ >= -46 && item.Dominant_RSRQ < -44);
+    const filteredCellname4 = cellname.filter(item => item.Dominant_RSRQ >= -44 && item.Dominant_RSRQ < -42);
+    const filteredCellname5 = cellname.filter(item => item.Dominant_RSRQ >= -42 && item.Dominant_RSRQ < -40);
+    const filteredCellname6 = cellname.filter(item => item.Dominant_RSRQ >= -40 && item.Dominant_RSRQ < -38);
+    const filteredCellname7 = cellname.filter(item => item.Dominant_RSRQ >= -38 && item.Dominant_RSRQ < -36);
+    const filteredCellname8 = cellname.filter(item => item.Dominant_RSRQ >= -36 && item.Dominant_RSRQ < -34);
+    const filteredCellname9 = cellname.filter(item => item.Dominant_RSRQ >= -34 && item.Dominant_RSRQ < -32);
+    const filteredCellname10 = cellname.filter(item => item.Dominant_RSRQ >= -32 && item.Dominant_RSRQ < -30);
+    const filteredCellname11 = cellname.filter(item => item.Dominant_RSRQ >= -30 && item.Dominant_RSRQ < -28);
+    const filteredCellname12 = cellname.filter(item => item.Dominant_RSRQ >= -28 && item.Dominant_RSRQ < -26);
+    const filteredCellname13 = cellname.filter(item => item.Dominant_RSRQ >= -26 && item.Dominant_RSRQ < -24);
+    const filteredCellname14 = cellname.filter(item => item.Dominant_RSRQ >= -24 && item.Dominant_RSRQ < -22);
+    const filteredCellname15 = cellname.filter(item => item.Dominant_RSRQ >= -22 && item.Dominant_RSRQ < -20);
+    const filteredCellname16 = cellname.filter(item => item.Dominant_RSRQ >= -20 && item.Dominant_RSRQ < -18);
+    const filteredCellname17 = cellname.filter(item => item.Dominant_RSRQ >= -18 && item.Dominant_RSRQ < -16);
+    const filteredCellname18 = cellname.filter(item => item.Dominant_RSRQ >= -16 && item.Dominant_RSRQ < -14);
+    const filteredCellname19 = cellname.filter(item => item.Dominant_RSRQ >= -14 && item.Dominant_RSRQ < -12);
+    const filteredCellname20 = cellname.filter(item => item.Dominant_RSRQ >= -12 && item.Dominant_RSRQ < -10);
+    const filteredCellname21 = cellname.filter(item => item.Dominant_RSRQ >= -10 && item.Dominant_RSRQ < -8);
+    const filteredCellname22 = cellname.filter(item => item.Dominant_RSRQ >= -8 && item.Dominant_RSRQ < -6);
+    const filteredCellname23 = cellname.filter(item => item.Dominant_RSRQ >= -6 && item.Dominant_RSRQ < -4);
+    const filteredCellname24 = cellname.filter(item => item.Dominant_RSRQ >= -4 && item.Dominant_RSRQ < -2);
+    const filteredCellname25 = cellname.filter(item => item.Dominant_RSRQ >= -2 && item.Dominant_RSRQ < -0);
+    const filteredCellname26 = cellname.filter(item => item.Dominant_RSRQ >= -0);
 
     return (
         <div>

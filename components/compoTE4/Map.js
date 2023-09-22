@@ -64,7 +64,7 @@ export default function Map() {
       </div>
       <div className="z-20 flex mb-24 ml-20 mt-4 p-2 shadow-inner shadow-white border-white border-2 rounded-md bg-gray-700">
         <MapContainer
-        className="mt-4 ml-32 mb-4"
+          className="mt-4 ml-32 mb-4"
           ref={mapRef}
           style={{ height: "500px", width: "910px", zIndex: "1" }}
           center={[13.773481, 100.561079]}
@@ -77,22 +77,22 @@ export default function Map() {
           />
           {data
             ? data.map((item) => (
-                <Marker
-                  eventHandlers={{
-                    click: () =>
-                      flyto(item.LATITUDE_WGS84, item.LONGITUDE_WGS84),
-                  }}
-                  key={item.id}
-                  icon={L.icon({ iconUrl, iconSize: [60, 50] })}
-                  position={[item.LATITUDE_WGS84, item.LONGITUDE_WGS84]}
-                >
-                  <Popup>
-                    {item.eNodeB_Name} <br />
-                    {item.province} <br />
-                    {item.district}
-                  </Popup>
-                </Marker>
-              ))
+              <Marker
+                eventHandlers={{
+                  click: () =>
+                    flyto(item.LATITUDE_WGS84, item.LONGITUDE_WGS84),
+                }}
+                key={item.id}
+                icon={L.icon({ iconUrl, iconSize: [60, 50] })}
+                position={[item.LATITUDE_WGS84, item.LONGITUDE_WGS84]}
+              >
+                <Popup>
+                  {item.eNodeB_Name} <br />
+                  {item.province} <br />
+                  {item.district}
+                </Popup>
+              </Marker>
+            ))
             : null}
           {dominant === "Dominant_RSRP" ? (
             <div>
@@ -106,28 +106,41 @@ export default function Map() {
               <CellnameRSRQ grid={grid} cellname={cellname} />
             </div>
           ) : null}
-          <LayerMap/>
+          <LayerMap />
         </MapContainer>
 
         {/* แถบสี */}
-        <div className="mt-16 ml-16 mr-44">
-          <div className="mt-2 mb-2 text-white w-24 h-10 p-2 rounded-md border-2 border-white m">
-            -120 dBm
-          </div>
-          <div className="ml-6 mb-2 bg-gradient-to-b from-red-500 via-yellow-300 to-green-500 h-72 w-10 " />
-          <div className=" text-white  w-24 h-10 p-2 rounded-md border-2 border-white ">
-            -70 dBm
-          </div>
-        </div>
+        {
+          dominant && dominant === "Dominant_RSRQ" ? (
+            <div className="mt-16 ml-16 mr-44">
+              <div className="mt-2 mb-2 text-white w-24 h-10 p-2 rounded-md border-2 border-white m">
+                -50 dBm
+              </div>
+              <div className="ml-6 mb-2 bg-gradient-to-b from-red-500 via-yellow-300 to-green-500 h-72 w-10 " />
+              <div className=" text-white  w-24 h-10 p-2 rounded-md border-2 border-white ">
+                0 dBm
+              </div>
+            </div>
+          ) : (
+            <div className="mt-16 ml-16 mr-44">
+              <div className="mt-2 mb-2 text-white w-24 h-10 p-2 rounded-md border-2 border-white m">
+                -120 dBm
+              </div>
+              <div className="ml-6 mb-2 bg-gradient-to-b from-red-500 via-yellow-300 to-green-500 h-72 w-10 " />
+              <div className=" text-white  w-24 h-10 p-2 rounded-md border-2 border-white ">
+                -70 dBm
+              </div>
+            </div>
+          )
+        }
       </div>
       <div>
         <FloatButton onClick={toggleTable} className="float-button" />
       </div>
 
       <div
-        className={`content-table z-20 ${showTable ? "visible" : ""} ${
-          slideAnimation ? "slide-up" : ""
-        }`}
+        className={`content-table z-20 ${showTable ? "visible" : ""} ${slideAnimation ? "slide-up" : ""
+          }`}
       >
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
           <thead className="th text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">

@@ -35,13 +35,13 @@ export default function GridRSRQ({ grid, cellname }) {
     "#05f703"
   ];
 
-  const getColorIndex = (rsrp) => {
-    if (rsrp <= -121) return 0;
-    if (rsrp >= -70) return 26;
-    return Math.floor((rsrp + 121) / 2);
+ const getColorIndex = (rsrq) => {
+    if (rsrq <= -50) return 0;
+    if (rsrq >= 0) return 26;
+    return Math.floor((rsrq + 50) / 2);
   };
 
-  const filteredGrid = grid.filter(item => !cellname || cellname === undefined || item.Dominant_RSRP >= -70);
+  const filteredGrid = grid.filter(item => !cellname || cellname === undefined || (item.Dominant_RSRQ >= -50 && item.Dominant_RSRQ <= 0));
 
   return (
     <div>
