@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { DataGrid, GridToolbar, GridPagination } from "@mui/x-data-grid";
 import { BiSearchAlt } from "react-icons/bi";
-import { TablePagination } from "@mui/material";
+import Swal from "sweetalert2";
 const columns = [
   { field: "eNodeB_Name", headerName: "eNodeB", width: 80 },
   { field: "Sector", headerName: "Sector", width: 100 },
@@ -46,7 +46,33 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
     const response = await fetch(
       `http://localhost:3000/api/CellNameHistorical?targetDate=${data}&enodeb=${inputValue}`
     );
+    if(response.ok){
+    Swal.fire({
+      position:'top',
+      icon: "success",
+      title: "Success",
+      showConfirmButton: false,
+      timer:1000
+    })}
+    if (!response.ok) {
+      console.error("กรุณาเลือกข้อมูล");
+      await Swal.fire({
+        icon: "warning",
+        title: "Incomplete information",
+        text: "Please Fill In Complete Information.",
+      });
+      return;
+    }
     const filteredData = await response.json();
+    if (filteredData.length === 0) {
+      console.error("ไม่พบข้อมูล");
+      await Swal.fire({
+        icon: "warning",
+        title: "Warning",
+        text: "Please Select eNodeB Name",
+      });
+      return;
+    }
     setCellname(filteredData);
     setCellData(filteredData);
   };
@@ -99,6 +125,12 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
         gridData = await response.json(); // อัปเดตค่า responseData ใน try block
       } else {
         console.error("เกิดข้อผิดพลาดในการดึงข้อมูล");
+        await Swal.fire({
+          icon: "error",
+          title: "เกิดข้อผิดพลาดในการดึงข้อมูล",
+          text: "ไม่สามารถดึงข้อมูลได้ในขณะนี้",
+        });
+        return;
       }
     } catch (error) {
       console.error("เกิดข้อผิดพลาดในการเรียก API", error);
@@ -132,6 +164,14 @@ const FormPredict = ({ setCellname, setCombinedData }) => {
     }, []);
 
     setCombinedData(groupedData);
+
+    Swal.fire({
+      position: "top",
+      icon: "success",
+      title: "Successfully Predicted",
+      showConfirmButton: false,
+      timer: 1000,
+    });
 
     console.log("ข้อมูล gridData", gridData); // สามารถเข้าถึง responseData นอก try block
     console.log("ข้อมูล cellname", cellNameData);
