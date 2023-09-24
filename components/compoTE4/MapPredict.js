@@ -94,7 +94,7 @@ export default function MapPredict({ pageData }) {
           </div>
 
           <div className="text-white mt-0">
-            <label className="text-white">Select Cell Name</label>
+            <label className="text-white">Select Multiple Cell Name</label>
             <div>
               <i>
                 <Select
