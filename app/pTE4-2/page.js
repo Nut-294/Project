@@ -4,7 +4,7 @@ import React from "react";
 import SideBar from "@/components/compoTE4/Sidebar";
 import FormPredict from "@/components/compoTE4/FormPredict";
 import Predict from "@/components/compoTE4/Predict";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import MapPredict from "@/components/compoTE4/MapPredict";
 import Signal from "@/components/compoTE4/bar/Signal";
 import dynamic from "next/dynamic";
@@ -40,12 +40,24 @@ export default function page() {
   const [combinedData, setCombinedData] = useState([]);
 
   const [pageData, setPageData] = useState([]);
+  const [pageLoaded, setPageLoaded] = useState(false);
 
   const handleDataReady = (mergedData) => {
     setPageData(mergedData);
   };
 
   console.log("ข้อมูล Cellname",cellname)
+  
+  useEffect(() => {
+    // เพิ่มข้อมูลลงใน Session Storage เมื่อหน้าถูกโหลด
+    sessionStorage.setItem('pageTE4-2', 'true');
+  
+    // ตรวจสอบข้อมูลจาก Session Storage เมื่อหน้าถูกโหลด
+    const loaded = sessionStorage.getItem('pageTE4-2');
+    if (loaded === 'true') {
+      setPageLoaded(true);
+    }
+  }, []);
   return (
     <div>
       <div className="flex">

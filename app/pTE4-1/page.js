@@ -4,6 +4,7 @@ import React from "react";
 import SideBar from "@/components/compoTE4/Sidebar";
 import dynamic from "next/dynamic";
 import Data from "@/components/compoTE4/bar/Data";
+import { useState,useEffect } from "react";
 const DynamicMap = dynamic(() => import("@/components/compoTE4/Map"), {
   loading: () => (
     <div role="status">
@@ -31,6 +32,18 @@ const DynamicMap = dynamic(() => import("@/components/compoTE4/Map"), {
   ssr: false,
 });
 export default function PageOne() {
+  const [pageLoaded, setPageLoaded] = useState(false);
+
+useEffect(() => {
+  // ตัวอย่างการเพิ่มข้อมูลลงใน Session Storage เมื่อหน้าถูกโหลด
+  sessionStorage.setItem('pageTE4-1', 'true');
+
+  // ตรวจสอบข้อมูลจาก Session Storage เมื่อหน้าถูกโหลด
+  const loaded = sessionStorage.getItem('pageTE4-1');
+  if (loaded === 'true') {
+    setPageLoaded(true);
+  }
+}, []);
   return (
     <div className="">
       <div className="flex">
@@ -44,18 +57,4 @@ export default function PageOne() {
       </div>
     </div>
   );
-}
-
-{
-  /* <div className="">
-      <div className="flex">
-        <div className="fixed ">
-          <SideBar />
-        </div>
-
-        <div className="ml-72">
-          <DynamicMap />
-        </div>
-      </div>
-    </div> */
 }

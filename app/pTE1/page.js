@@ -7,6 +7,7 @@ import SideBar from "@/components/compoTE4/Sidebar";
 import Search from "@/components/compoTE1/search_enodeB";
 import Data from "@/components/compoTE4/bar/Data";
 import { BiSearchAlt } from "react-icons/bi";
+import { useState,useEffect } from "react";
 
 const MapContent = dynamic(() => import("@/components/compoTE1/MapContent"), {
   ssr: false,
@@ -14,6 +15,17 @@ const MapContent = dynamic(() => import("@/components/compoTE1/MapContent"), {
 
 
 export default function Home() {
+  const [pageLoaded, setPageLoaded] = useState(false);
+  useEffect(() => {
+    // เพิ่มข้อมูลลงใน Session Storage เมื่อหน้าถูกโหลด
+    sessionStorage.setItem('pageTE-1', 'true');
+  
+    // ตรวจสอบข้อมูลจาก Session Storage เมื่อหน้าถูกโหลด
+    const loaded = sessionStorage.getItem('pageTE-1');
+    if (loaded === 'true') {
+      setPageLoaded(true);
+    }
+  }, []);
   return (
     <div className="flex">
       <div className="">
