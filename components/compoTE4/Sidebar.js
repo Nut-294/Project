@@ -163,7 +163,7 @@ function SideBar() {
         {/* Logout */}
         <div className=" w-full">
           {data?.user ? (
-            <a onClick={() => signOut({ callbackUrl: "/" })}>
+            <a onClick={() => signOut({ callbackUrl: "/login" })}>
               <div className="flex mt-1 pl-4 pt-2 pb-2 justify-start items-center gap-4 hover:bg-slate-500 rounded-md group cursor-pointer hover:shadow-xl m-auto">
                 <MdOutlineLogout className="text-3xl text-teal-400 group-hover:text-white" />
                 <h3
