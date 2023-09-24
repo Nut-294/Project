@@ -36,12 +36,12 @@ export default function GridRSRQ({ grid, cellname }) {
   ];
 
  const getColorIndex = (rsrq) => {
-    if (rsrq <= -50) return 0;
+    if (rsrq <= -51) return 0;
     if (rsrq >= 0) return 26;
-    return Math.floor((rsrq + 50) / 2);
+    return Math.floor((rsrq + 51) / 2);
   };
 
-  const filteredGrid = grid.filter(item => !cellname || cellname === undefined || (item.Dominant_RSRQ >= -50 && item.Dominant_RSRQ <= 0));
+  const filteredGrid = grid.filter(item => !cellname || cellname === undefined || (item.Dominant_RSRQ >= -51 && item.Dominant_RSRQ <= 0));
 
   return (
     <div>
