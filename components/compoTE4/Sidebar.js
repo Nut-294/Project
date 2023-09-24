@@ -19,6 +19,7 @@ function SideBar() {
 
   const { data } = useSession();
 
+
   return (
     <div className="flex border-2 border-black fixed top-16">
       <div
