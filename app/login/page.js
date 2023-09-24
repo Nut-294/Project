@@ -16,11 +16,7 @@ export default function Login() {
         if(data && data.user){
             if(data.user){
                 router.push("/pHome")
-                toast.success("Login Success")}
-            // }else if(!data.user){
-            //     router.push("/")
-            //     toast.success("Login Success")
-            // }
+                }
         }
     },[data, router])
     const handleSubmit = async(e)=>{

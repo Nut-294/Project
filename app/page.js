@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import { toast } from "react-toastify";
 
 export default function page() {
@@ -10,7 +10,7 @@ export default function page() {
   const { data } = useSession();
   useEffect(() => {
       if (data) {
-        router.push("/pHome");
+        signOut({ callbackUrl: "/login" })
       } else if (!data) {
         router.push("/login");
       }
