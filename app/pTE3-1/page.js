@@ -19,11 +19,11 @@ export default function page() {
   }, []);
   return (
     <div className="flex ">
-      <div className="flex bg-green-100">
+      <div className="flex bg-green-100 z-40">
         <SideBar />
         <Antenna />
       </div>
-      <div className="ml-72 mt-32">
+      <div className="ml-40 mt-32">
         <Polar />
       </div>
     </div>
